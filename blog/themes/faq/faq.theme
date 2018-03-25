@@ -1,0 +1,4 @@
+[Theme]
+parent = bootstrap3-jinja
+engine = jinja
+
