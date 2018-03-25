@@ -7,22 +7,42 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://leethargo.github.io/</loc>
-  <lastmod>2018-03-25T01:37:00Z</lastmod>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://leethargo.github.io/2018/</loc>
-  <lastmod>2018-03-25T01:37:00Z</lastmod>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://leethargo.github.io/archive.html</loc>
-  <lastmod>2018-03-25T01:37:00Z</lastmod>
+  <lastmod>2018-03-25T11:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://leethargo.github.io/categories/</loc>
-  <lastmod>2018-03-24T21:09:00Z</lastmod>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://leethargo.github.io/categories/finance/</loc>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://leethargo.github.io/categories/germany/</loc>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://leethargo.github.io/categories/julialang/</loc>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://leethargo.github.io/categories/taxes/</loc>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://leethargo.github.io/categories/work/</loc>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://leethargo.github.io/posts/marginal-net-income-in-germany/</loc>
-  <lastmod>2018-03-25T01:37:00Z</lastmod>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
  </url>
 </urlset>

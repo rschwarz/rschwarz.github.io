@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="Random thoughts and experiments.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Frequently Answered Quantitatively</title>
-<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/html4css1.css" rel="stylesheet" type="text/css">
+<link href="assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
 <link href="assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#777777">
@@ -58,19 +66,12 @@
         <!--Body content-->
         <div class="row">
             
-            
-
     
-
-
     
 <div class="postindex">
     <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/marginal-net-income-in-germany/" class="u-url">Marginal Net Income in Germany</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Robert Schwarz
-            </span></p>
-            <p class="dateline"><a href="posts/marginal-net-income-in-germany/" rel="bookmark"><time class="published dt-published" datetime="2018-03-24T22:10:46+01:00" title="2018-03-24 22:10">2018-03-24 22:10</time></a></p>
+            <p class="dateline"><a href="posts/marginal-net-income-in-germany/" rel="bookmark"><time class="published dt-published" datetime="2018-03-24T22:10:46+01:00" title="2018-03-24">2018-03-24</time></a></p>
         </div>
     </header><div class="e-content entry-content">
     <div tabindex="-1" id="notebook" class="border-box-sizing">
@@ -82,6 +83,7 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We investigate the tax burden and insurance cost for different scenarios of gross income using a simplified model of the situation in Germany. The goal is to compute the marginal net income for additional gross income. From that, we can also derive the net hourly income for part-time employment.</p>
+<p>This analysis is done using <a href="https://julialang.org/">Julia</a> in a <a href="https://jupyter.org/">Jupyter</a> notebook.</p>
 
 </div>
 </div>
@@ -874,11 +876,7 @@ If we have the option to reduce our working hours, we should be able to increase
 </div>
 
 
-
-
-
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
         </script>
 </div>
@@ -888,8 +886,7 @@ If we have the option to reduce our working hours, we should be able to increase
 </div>
 </div>
 
-
-            <script src="assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+            <script src="assets/js/jquery.min.js"></script><script src="assets/js/bootstrap.min.js"></script><script src="assets/js/moment-with-locales.min.js"></script><script src="assets/js/fancydates.js"></script><script src="assets/js/jquery.colorbox-min.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates -->
