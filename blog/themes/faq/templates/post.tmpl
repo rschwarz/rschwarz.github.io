@@ -10,7 +10,6 @@
     {% if post.meta('keywords') %}
     <meta name="keywords" content="{{ post.meta('keywords')|e }}">
     {% endif %}
-    <meta name="author" content="{{ post.author()|e }}">
     {% if post.prev_post %}
         <link rel="prev" href="{{ post.prev_post.permalink() }}" title="{{ post.prev_post.title()|e }}" type="text/html">
     {% endif %}
