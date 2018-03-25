@@ -1,0 +1,4 @@
+Sitemap: https://leethargo.github.io/sitemapindex.xml
+
+User-Agent: *
+Host: leethargo.github.io
