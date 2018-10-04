@@ -15,15 +15,31 @@
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/categories/julialang.xml</loc>
-  <lastmod>2018-05-30T09:34:00Z</lastmod>
+  <lastmod>2018-10-04T09:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/categories/microtonal.xml</loc>
   <lastmod>2018-05-30T09:34:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://leethargo.github.io/categories/modeling.xml</loc>
+  <lastmod>2018-10-04T09:14:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://leethargo.github.io/categories/music.xml</loc>
   <lastmod>2018-05-30T09:34:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://leethargo.github.io/categories/nutrition.xml</loc>
+  <lastmod>2018-10-04T09:14:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://leethargo.github.io/categories/optimization.xml</loc>
+  <lastmod>2018-10-04T09:14:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://leethargo.github.io/categories/parenting.xml</loc>
+  <lastmod>2018-10-04T09:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/categories/taxes.xml</loc>
@@ -39,10 +55,10 @@
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/rss.xml</loc>
-  <lastmod>2018-05-30T09:34:00Z</lastmod>
+  <lastmod>2018-10-04T09:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/sitemap.xml</loc>
-  <lastmod>2018-05-30T09:34:00Z</lastmod>
+  <lastmod>2018-10-04T09:14:00Z</lastmod>
  </sitemap>
 </sitemapindex>
