@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frequently Answered Quantitatively (Posts about optimization)</title><link>https://leethargo.github.io/</link><description></description><atom:link href="https://leethargo.github.io/categories/optimization.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 04 Oct 2018 09:14:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Infant Formula, Cow's Milk and Nutrional Blending</title><link>https://leethargo.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Frequently Answered Quantitatively (Posts about optimization)</title><link>https://leethargo.github.io/</link><description></description><atom:link rel="self" href="https://leethargo.github.io/categories/optimization.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 24 Oct 2018 18:45:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Infant Formula, Cow's Milk and Nutrional Blending</title><link>https://leethargo.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
@@ -406,7 +406,7 @@ getvalue(oil) = 2.0661764705882355
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# iterate over parameter range and collect solutions&lt;/span&gt;
-&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;1e-6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;stop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;1e-6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;sols&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;rel_nrg&lt;/span&gt; &lt;span class="kp"&gt;in&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;
     &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sol&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dilution&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rel_nrg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -614,20 +614,20 @@ In the beginning, this amount of milk stays the same and the oil supplementation
 
 &lt;div class="output_text output_subarea output_execute_result"&gt;
 &lt;pre&gt;14-element Array{Float64,1}:
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118&lt;/pre&gt;
+ 1.4411764705882357
+ 1.4411764705882355
+ 1.4411764705882355
+ 1.4411764705882357
+ 1.4411764705882353
+ 1.4411764705882355
+ 1.4411764705882355
+ 1.4411764705882355
+ 1.4411764705882357
+ 1.4411764705882353
+ 1.4411764705882355
+ 1.4411764705882353
+ 1.4411764705882353
+ 1.4411764705882353&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;

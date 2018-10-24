@@ -514,7 +514,7 @@ getvalue(oil) = 2.0661764705882355
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># iterate over parameter range and collect solutions</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">range</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 <span class="n">sols</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">rel_nrg</span> <span class="kp">in</span> <span class="n">r</span>
     <span class="n">status</span><span class="p">,</span> <span class="n">sol</span> <span class="o">=</span> <span class="n">dilution</span><span class="p">(</span><span class="n">rel_nrg</span><span class="p">)</span>
@@ -725,20 +725,20 @@ In the beginning, this amount of milk stays the same and the oil supplementation
 
 <div class="output_text output_subarea output_execute_result">
 <pre>14-element Array{Float64,1}:
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118
- 1.44118</pre>
+ 1.4411764705882357
+ 1.4411764705882355
+ 1.4411764705882355
+ 1.4411764705882357
+ 1.4411764705882353
+ 1.4411764705882355
+ 1.4411764705882355
+ 1.4411764705882355
+ 1.4411764705882357
+ 1.4411764705882353
+ 1.4411764705882355
+ 1.4411764705882353
+ 1.4411764705882353
+ 1.4411764705882353</pre>
 </div>
 
 </div>
