@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://leethargo.github.io/</loc>
-  <lastmod>2018-12-05T12:52:00Z</lastmod>
+  <lastmod>2018-12-05T13:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://leethargo.github.io/2018/</loc>
@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://leethargo.github.io/archive.html</loc>
-  <lastmod>2018-12-04T21:08:00Z</lastmod>
+  <lastmod>2018-12-05T13:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://leethargo.github.io/categories/</loc>
@@ -68,6 +68,10 @@
  <url>
   <loc>https://leethargo.github.io/categories/xenharmonic/</loc>
   <lastmod>2018-05-30T09:34:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://leethargo.github.io/pages/about/</loc>
+  <lastmod>2018-12-05T13:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://leethargo.github.io/posts/consonant-triads/</loc>
