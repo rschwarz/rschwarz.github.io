@@ -64,6 +64,7 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
+        ("/pages/about", "About"),
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed"),
@@ -106,10 +107,10 @@ THEME_COLOR = '#777777'
 #
 # Finally, note that destination can be translated, i.e. you can
 # specify a different translation folder per language. Example:
-#     PAGES = (
-#         ("pages/*.rst", {"en": "pages", "de": "seiten"}, "page.tmpl"),
-#         ("pages/*.md", {"en": "pages", "de": "seiten"}, "page.tmpl"),
-#     )
+PAGES = (
+    ("pages/*.rst", {"en": "pages"}, "page.tmpl"),
+    ("pages/*.md", {"en": "pages"}, "page.tmpl"),
+)
 
 POSTS = (
     ("posts/*.rst", "posts", "post.tmpl"),
