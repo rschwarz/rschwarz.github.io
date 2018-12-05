@@ -119,7 +119,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The data consists of daily closing prices from 2016 of the 30 stocks that participate in the Dow Jones and are given in a CSV file:</p>
+<p>The data consists of daily closing prices from 2016 of the 30 stocks that participate in the Dow Jones and are given in a <a href="https://leethargo.github.io/files/dowjones2016.csv">CSV file</a>:</p>
 
 </div>
 </div>
@@ -129,7 +129,41 @@ article: http://ogp.me/ns/article#
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s">"dowjones2016.csv"</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="n">ndsparse</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="p">;</span><span class="n">head</span> <span class="o">-</span><span class="n">n4</span> <span class="o">../</span><span class="n">files</span><span class="o">/</span><span class="n">dowjones2016</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Date,Symbol,Price
+2016-01-04,AAPL,105.349997999999999
+2016-01-04,AXP,67.589995999999999
+2016-01-04,BA,140.500000000000000
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s">"../files/dowjones2016.csv"</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="n">ndsparse</span>
 <span class="n">price</span> <span class="o">|&gt;</span> <span class="nd">@take</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
@@ -143,7 +177,7 @@ article: http://ogp.me/ns/article#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[2]:</div>
+<div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -182,7 +216,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">price</span> <span class="o">|&gt;</span> <span class="nd">@vlplot</span><span class="p">(</span><span class="o">:</span><span class="n">line</span><span class="p">,</span> <span class="n">x</span><span class="o">=:</span><span class="kt">Date</span><span class="p">,</span> <span class="n">y</span><span class="o">=:</span><span class="n">Price</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">{</span><span class="s">"Symbol:o"</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="p">{</span><span class="n">scheme</span><span class="o">=</span><span class="s">"viridis"</span><span class="p">}},</span>
@@ -199,7 +233,7 @@ article: http://ogp.me/ns/article#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[3]:</div>
+<div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -228,7 +262,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">Statistics</span><span class="o">:</span> <span class="n">mean</span>
@@ -241,7 +275,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">avgprice</span> <span class="o">=</span> <span class="n">price</span> <span class="o">|&gt;</span>
@@ -260,7 +294,7 @@ article: http://ogp.me/ns/article#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+<div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -299,42 +333,10 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">avgprice</span> <span class="o">|&gt;</span> <span class="nd">@vlplot</span><span class="p">(</span><span class="o">:</span><span class="n">bar</span><span class="p">,</span> <span class="n">x</span><span class="o">=:</span><span class="kt">Symbol</span><span class="p">,</span> <span class="n">y</span><span class="o">=:</span><span class="n">AvgPrice</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[6]:</div>
-
-
-
-<div class="output_svg output_subarea output_execute_result">
-<?xml version="1.0" encoding="utf-8"?><svg class="marks" width="689" height="267" viewbox="0 0 689 267" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(54,5)"><g class="mark-group role-frame root"><g transform="translate(0,0)"><path class="background" d="M0.5,0.5h630v200h-630Z" style="fill: none; stroke: #ddd;"></path><g><g class="mark-group role-axis"><g transform="translate(0.5,0.5)"><path class="background" d="M0,0h0v0h0Z" style="pointer-events: none; fill: none;"></path><g><g class="mark-rule role-axis-grid" style="pointer-events: none;"><line transform="translate(0,200)" x2="630" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,144)" x2="630" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,89)" x2="630" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,33)" x2="630" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line></g></g></g></g><g class="mark-rect role-mark marks"><path d="M1.0500000000000114,83.77332458994707h18.900000000000002v116.22667541005293h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M22.05000000000001,129.11851847001765h18.900000000000002v70.88148152998235h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M43.05000000000001,52.098324334215164h18.900000000000002v147.90167566578484h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M64.05000000000001,112.55776029982371h18.900000000000002v87.44223970017629h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M85.05000000000001,168.011463840388h18.900000000000002v31.98853615961201h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M106.05000000000001,89.02927701499117h18.900000000000002v110.97072298500883h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M127.05000000000001,126.47059093915345h18.900000000000002v73.52940906084655h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M148.05,91.70912694003528h18.900000000000002v108.29087305996472h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M169.05,166.28068783509698h18.900000000000002v33.719312164903016h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M190.05,12.095767292768898h18.900000000000002v187.9042327072311h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M211.05,55.755202746913625h18.900000000000002v144.24479725308638h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M232.05,32.76119910052907h18.900000000000002v167.23880089947093h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M253.05,162.96763666666666h18.900000000000002v37.032363333333336h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M274.05,73.76966483245138h18.900000000000002v126.23033516754862h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M295.05,127.08575840388005h18.900000000000002v72.91424159611995h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M316.05,151.6166667680776h18.900000000000002v48.38333323192239h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M337.05,66.5091268959435h18.900000000000002v133.4908731040565h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M358.05,12.763976375661457h18.900000000000002v187.23602362433854h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M379.05,136.12561730158728h18.900000000000002v63.87438269841272h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M400.05,138.60074977954145h18.900000000000002v61.399250220458555h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M421.05,137.5030422707231h18.900000000000002v62.496957729276886h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M442.05,163.5267635802469h18.900000000000002v36.47323641975311h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M463.05,106.98289221781306h18.900000000000002v93.01710778218694h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M484.05,73.97156078924156h18.900000000000002v126.02843921075844h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M505.05,49.54166684303351h18.900000000000002v150.4583331569665h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M526.05,87.52429433421514h18.900000000000002v112.47570566578486h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M547.05,113.4407848236332h18.900000000000002v86.5592151763668h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M568.05,142.88355378747795h18.900000000000002v57.11644621252205h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M589.05,122.72548503527335h18.900000000000002v77.27451496472665h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M610.05,104.20035281305114h18.900000000000002v95.79964718694886h-18.900000000000002Z" style="fill: #4c78a8;"></path></g><g class="mark-group role-axis"><g transform="translate(0.5,200.5)"><path class="background" d="M0,0h0v0h0Z" style="pointer-events: none; fill: none;"></path><g><g class="mark-rule role-axis-tick" style="pointer-events: none;"><line transform="translate(10,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(31,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(52,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(73,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(94,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(115,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(136,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(157,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(178,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(199,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(220,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(241,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(262,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(283,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(304,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(325,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(346,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(367,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(388,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(409,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(430,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(451,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(472,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(493,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(514,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(535,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(556,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(577,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(598,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(619,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line></g><g class="mark-text role-axis-label" style="pointer-events: none;"><text text-anchor="end" transform="translate(9.500000000000012,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">AAPL</text><text text-anchor="end" transform="translate(30.500000000000014,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">AXP</text><text text-anchor="end" transform="translate(51.500000000000014,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">BA</text><text text-anchor="end" transform="translate(72.50000000000001,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">CAT</text><text text-anchor="end" transform="translate(93.50000000000001,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">CSCO</text><text text-anchor="end" transform="translate(114.50000000000001,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">CVX</text><text text-anchor="end" transform="translate(135.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">DD</text><text text-anchor="end" transform="translate(156.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">DIS</text><text text-anchor="end" transform="translate(177.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">GE</text><text text-anchor="end" transform="translate(198.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">GS</text><text text-anchor="end" transform="translate(219.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">HD</text><text text-anchor="end" transform="translate(240.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">IBM</text><text text-anchor="end" transform="translate(261.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">INTC</text><text text-anchor="end" transform="translate(282.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">JNJ</text><text text-anchor="end" transform="translate(303.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">JPM</text><text text-anchor="end" transform="translate(324.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">KO</text><text text-anchor="end" transform="translate(345.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">MCD</text><text text-anchor="end" transform="translate(366.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">MMM</text><text text-anchor="end" transform="translate(387.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">MRK</text><text text-anchor="end" transform="translate(408.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">MSFT</text><text text-anchor="end" transform="translate(429.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">NKE</text><text text-anchor="end" transform="translate(450.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">PFE</text><text text-anchor="end" transform="translate(471.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">PG</text><text text-anchor="end" transform="translate(492.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">TRV</text><text text-anchor="end" transform="translate(513.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">UNH</text><text text-anchor="end" transform="translate(534.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">UTX</text><text text-anchor="end" transform="translate(555.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">V</text><text text-anchor="end" transform="translate(576.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">VZ</text><text text-anchor="end" transform="translate(597.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">WMT</text><text text-anchor="end" transform="translate(618.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">XOM</text></g><g class="mark-rule role-axis-domain" style="pointer-events: none;"><line transform="translate(0,0)" x2="630" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line></g><g class="mark-text role-axis-title" style="pointer-events: none;"><text text-anchor="middle" transform="translate(315,53)" style="font-family: sans-serif; font-size: 11px; font-weight: bold; fill: #000; opacity: 1;">Symbol</text></g></g></g></g><g class="mark-group role-axis"><g transform="translate(0.5,0.5)"><path class="background" d="M0,0h0v0h0Z" style="pointer-events: none; fill: none;"></path><g><g class="mark-rule role-axis-tick" style="pointer-events: none;"><line transform="translate(0,200)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,144)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,89)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,33)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line></g><g class="mark-text role-axis-label" style="pointer-events: none;"><text text-anchor="end" transform="translate(-7,203)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">0</text><text text-anchor="end" transform="translate(-7,147.44444444444446)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">50</text><text text-anchor="end" transform="translate(-7,91.88888888888889)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">100</text><text text-anchor="end" transform="translate(-7,36.333333333333314)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">150</text></g><g class="mark-rule role-axis-domain" style="pointer-events: none;"><line transform="translate(0,200)" x2="0" y2="-200" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line></g><g class="mark-text role-axis-title" style="pointer-events: none;"><text text-anchor="middle" transform="translate(-36,100) rotate(-90) translate(0,-2)" style="font-family: sans-serif; font-size: 11px; font-weight: bold; fill: #000; opacity: 1;">AvgPrice</text></g></g></g></g></g></g></g></g></svg>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">totalavg</span> <span class="o">=</span> <span class="n">avgprice</span> <span class="o">|&gt;</span> <span class="nd">@map</span><span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">AvgPrice</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="n">sum</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">avgprice</span> <span class="o">|&gt;</span> <span class="nd">@vlplot</span><span class="p">(</span><span class="o">:</span><span class="n">bar</span><span class="p">,</span> <span class="n">x</span><span class="o">=:</span><span class="kt">Symbol</span><span class="p">,</span> <span class="n">y</span><span class="o">=:</span><span class="n">AvgPrice</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -351,6 +353,38 @@ article: http://ogp.me/ns/article#
 
 
 
+<div class="output_svg output_subarea output_execute_result">
+<?xml version="1.0" encoding="utf-8"?><svg class="marks" width="689" height="267" viewbox="0 0 689 267" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(54,5)"><g class="mark-group role-frame root"><g transform="translate(0,0)"><path class="background" d="M0.5,0.5h630v200h-630Z" style="fill: none; stroke: #ddd;"></path><g><g class="mark-group role-axis"><g transform="translate(0.5,0.5)"><path class="background" d="M0,0h0v0h0Z" style="pointer-events: none; fill: none;"></path><g><g class="mark-rule role-axis-grid" style="pointer-events: none;"><line transform="translate(0,200)" x2="630" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,144)" x2="630" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,89)" x2="630" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,33)" x2="630" y2="0" style="fill: none; stroke: #ddd; stroke-width: 1; opacity: 1;"></line></g></g></g></g><g class="mark-rect role-mark marks"><path d="M1.0500000000000114,83.77332458994707h18.900000000000002v116.22667541005293h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M22.05000000000001,129.11851847001765h18.900000000000002v70.88148152998235h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M43.05000000000001,52.098324334215164h18.900000000000002v147.90167566578484h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M64.05000000000001,112.55776029982371h18.900000000000002v87.44223970017629h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M85.05000000000001,168.011463840388h18.900000000000002v31.98853615961201h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M106.05000000000001,89.02927701499117h18.900000000000002v110.97072298500883h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M127.05000000000001,126.47059093915345h18.900000000000002v73.52940906084655h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M148.05,91.70912694003528h18.900000000000002v108.29087305996472h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M169.05,166.28068783509698h18.900000000000002v33.719312164903016h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M190.05,12.095767292768898h18.900000000000002v187.9042327072311h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M211.05,55.755202746913625h18.900000000000002v144.24479725308638h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M232.05,32.76119910052907h18.900000000000002v167.23880089947093h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M253.05,162.96763666666666h18.900000000000002v37.032363333333336h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M274.05,73.76966483245138h18.900000000000002v126.23033516754862h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M295.05,127.08575840388005h18.900000000000002v72.91424159611995h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M316.05,151.6166667680776h18.900000000000002v48.38333323192239h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M337.05,66.5091268959435h18.900000000000002v133.4908731040565h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M358.05,12.763976375661457h18.900000000000002v187.23602362433854h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M379.05,136.12561730158728h18.900000000000002v63.87438269841272h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M400.05,138.60074977954145h18.900000000000002v61.399250220458555h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M421.05,137.5030422707231h18.900000000000002v62.496957729276886h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M442.05,163.5267635802469h18.900000000000002v36.47323641975311h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M463.05,106.98289221781306h18.900000000000002v93.01710778218694h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M484.05,73.97156078924156h18.900000000000002v126.02843921075844h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M505.05,49.54166684303351h18.900000000000002v150.4583331569665h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M526.05,87.52429433421514h18.900000000000002v112.47570566578486h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M547.05,113.4407848236332h18.900000000000002v86.5592151763668h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M568.05,142.88355378747795h18.900000000000002v57.11644621252205h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M589.05,122.72548503527335h18.900000000000002v77.27451496472665h-18.900000000000002Z" style="fill: #4c78a8;"></path><path d="M610.05,104.20035281305114h18.900000000000002v95.79964718694886h-18.900000000000002Z" style="fill: #4c78a8;"></path></g><g class="mark-group role-axis"><g transform="translate(0.5,200.5)"><path class="background" d="M0,0h0v0h0Z" style="pointer-events: none; fill: none;"></path><g><g class="mark-rule role-axis-tick" style="pointer-events: none;"><line transform="translate(10,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(31,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(52,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(73,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(94,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(115,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(136,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(157,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(178,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(199,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(220,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(241,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(262,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(283,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(304,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(325,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(346,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(367,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(388,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(409,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(430,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(451,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(472,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(493,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(514,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(535,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(556,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(577,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(598,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(619,0)" x2="0" y2="5" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line></g><g class="mark-text role-axis-label" style="pointer-events: none;"><text text-anchor="end" transform="translate(9.500000000000012,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">AAPL</text><text text-anchor="end" transform="translate(30.500000000000014,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">AXP</text><text text-anchor="end" transform="translate(51.500000000000014,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">BA</text><text text-anchor="end" transform="translate(72.50000000000001,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">CAT</text><text text-anchor="end" transform="translate(93.50000000000001,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">CSCO</text><text text-anchor="end" transform="translate(114.50000000000001,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">CVX</text><text text-anchor="end" transform="translate(135.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">DD</text><text text-anchor="end" transform="translate(156.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">DIS</text><text text-anchor="end" transform="translate(177.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">GE</text><text text-anchor="end" transform="translate(198.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">GS</text><text text-anchor="end" transform="translate(219.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">HD</text><text text-anchor="end" transform="translate(240.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">IBM</text><text text-anchor="end" transform="translate(261.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">INTC</text><text text-anchor="end" transform="translate(282.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">JNJ</text><text text-anchor="end" transform="translate(303.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">JPM</text><text text-anchor="end" transform="translate(324.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">KO</text><text text-anchor="end" transform="translate(345.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">MCD</text><text text-anchor="end" transform="translate(366.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">MMM</text><text text-anchor="end" transform="translate(387.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">MRK</text><text text-anchor="end" transform="translate(408.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">MSFT</text><text text-anchor="end" transform="translate(429.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">NKE</text><text text-anchor="end" transform="translate(450.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">PFE</text><text text-anchor="end" transform="translate(471.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">PG</text><text text-anchor="end" transform="translate(492.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">TRV</text><text text-anchor="end" transform="translate(513.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">UNH</text><text text-anchor="end" transform="translate(534.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">UTX</text><text text-anchor="end" transform="translate(555.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">V</text><text text-anchor="end" transform="translate(576.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">VZ</text><text text-anchor="end" transform="translate(597.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">WMT</text><text text-anchor="end" transform="translate(618.5,7) rotate(270) translate(0,3)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">XOM</text></g><g class="mark-rule role-axis-domain" style="pointer-events: none;"><line transform="translate(0,0)" x2="630" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line></g><g class="mark-text role-axis-title" style="pointer-events: none;"><text text-anchor="middle" transform="translate(315,53)" style="font-family: sans-serif; font-size: 11px; font-weight: bold; fill: #000; opacity: 1;">Symbol</text></g></g></g></g><g class="mark-group role-axis"><g transform="translate(0.5,0.5)"><path class="background" d="M0,0h0v0h0Z" style="pointer-events: none; fill: none;"></path><g><g class="mark-rule role-axis-tick" style="pointer-events: none;"><line transform="translate(0,200)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,144)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,89)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line><line transform="translate(0,33)" x2="-5" y2="0" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line></g><g class="mark-text role-axis-label" style="pointer-events: none;"><text text-anchor="end" transform="translate(-7,203)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">0</text><text text-anchor="end" transform="translate(-7,147.44444444444446)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">50</text><text text-anchor="end" transform="translate(-7,91.88888888888889)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">100</text><text text-anchor="end" transform="translate(-7,36.333333333333314)" style="font-family: sans-serif; font-size: 10px; fill: #000; opacity: 1;">150</text></g><g class="mark-rule role-axis-domain" style="pointer-events: none;"><line transform="translate(0,200)" x2="0" y2="-200" style="fill: none; stroke: #888; stroke-width: 1; opacity: 1;"></line></g><g class="mark-text role-axis-title" style="pointer-events: none;"><text text-anchor="middle" transform="translate(-36,100) rotate(-90) translate(0,-2)" style="font-family: sans-serif; font-size: 11px; font-weight: bold; fill: #000; opacity: 1;">AvgPrice</text></g></g></g></g></g></g></g></g></svg>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="n">totalavg</span> <span class="o">=</span> <span class="n">avgprice</span> <span class="o">|&gt;</span> <span class="nd">@map</span><span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">AvgPrice</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="n">sum</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+
 
 <div class="output_text output_subarea output_execute_result">
 <pre>2617.739246769842</pre>
@@ -364,7 +398,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">weight</span> <span class="o">=</span> <span class="n">avgprice</span> <span class="o">|&gt;</span> <span class="nd">@map</span><span class="p">({</span><span class="kt">Symbol</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="kt">Symbol</span><span class="p">,</span> <span class="n">Weight</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">AvgPrice</span> <span class="o">/</span> <span class="n">totalavg</span><span class="p">})</span> <span class="o">|&gt;</span> <span class="n">ndsparse</span>
@@ -381,7 +415,7 @@ article: http://ogp.me/ns/article#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[8]:</div>
+<div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -420,7 +454,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">dowjones</span> <span class="o">=</span> <span class="n">price</span> <span class="o">|&gt;</span> 
@@ -440,7 +474,7 @@ article: http://ogp.me/ns/article#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[9]:</div>
+<div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -479,7 +513,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [10]:</div>
+<div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@vlplot</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">450</span><span class="p">)</span> <span class="o">+</span>
@@ -498,7 +532,7 @@ article: http://ogp.me/ns/article#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[10]:</div>
+<div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -542,7 +576,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [11]:</div>
+<div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">JuMP</span>
@@ -556,7 +590,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [12]:</div>
+<div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">price</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="kt">Date</span><span class="p">)</span>
@@ -575,7 +609,7 @@ article: http://ogp.me/ns/article#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[12]:</div>
+<div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -602,7 +636,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [13]:</div>
+<div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">training_days</span> <span class="o">=</span> <span class="mi">189</span>
@@ -638,7 +672,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+<div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -655,7 +689,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [14]:</div>
+<div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">function</span> <span class="n">solve_index_linear</span><span class="p">()</span>
@@ -689,7 +723,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[14]:</div>
+<div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -706,7 +740,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [15]:</div>
+<div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">solve_index_linear</span><span class="p">()</span>
@@ -723,7 +757,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[15]:</div>
+<div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -740,7 +774,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [16]:</div>
+<div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">solweight</span> <span class="o">=</span> <span class="p">[(</span><span class="kt">Symbol</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">SolWeight</span><span class="o">=</span><span class="n">sol</span><span class="o">.</span><span class="n">weight</span><span class="p">[</span><span class="n">s</span><span class="p">])</span> <span class="k">for</span> <span class="n">s</span> <span class="kp">in</span> <span class="n">symbols</span><span class="p">]</span>
@@ -759,7 +793,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+<div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -799,7 +833,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [17]:</div>
+<div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">bigM</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">minimum</span><span class="p">(</span><span class="n">weight</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -815,7 +849,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[17]:</div>
+<div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -842,7 +876,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [18]:</div>
+<div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">nstocks_range</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">6</span>
@@ -858,7 +892,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[18]:</div>
+<div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -885,7 +919,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [19]:</div>
+<div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">function</span> <span class="n">solve_index_sparse</span><span class="p">(</span><span class="n">nstocks</span><span class="p">)</span>
@@ -926,7 +960,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[19]:</div>
+<div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -943,7 +977,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [20]:</div>
+<div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">sols</span> <span class="o">=</span> <span class="p">[</span><span class="n">solve_index_sparse</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="kp">in</span> <span class="n">nstocks_range</span><span class="p">];</span>
@@ -966,7 +1000,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [21]:</div>
+<div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">solweight</span> <span class="o">=</span> <span class="p">[(</span><span class="n">NStocks</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="kt">Symbol</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">SolWeight</span><span class="o">=</span><span class="n">sols</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">weight</span><span class="p">[</span><span class="n">s</span><span class="p">])</span> <span class="k">for</span> <span class="n">n</span> <span class="kp">in</span> <span class="n">nstocks_range</span> <span class="k">for</span> <span class="n">s</span> <span class="kp">in</span> <span class="n">symbols</span><span class="p">]</span> <span class="o">|&gt;</span>
@@ -984,7 +1018,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[21]:</div>
+<div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -1023,7 +1057,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [22]:</div>
+<div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">indices</span> <span class="o">=</span> <span class="n">price</span> <span class="o">|&gt;</span>
@@ -1043,7 +1077,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[22]:</div>
+<div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -1082,7 +1116,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [23]:</div>
+<div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@vlplot</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span> <span class="o">+</span>
@@ -1103,7 +1137,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[23]:</div>
+<div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -1142,7 +1176,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [24]:</div>
+<div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">prevdates</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Date</span><span class="o">=</span><span class="n">dates</span><span class="p">[</span><span class="mi">2</span><span class="o">:</span><span class="k">end</span><span class="p">],</span> <span class="n">PrevDate</span><span class="o">=</span><span class="n">dates</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -1159,7 +1193,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[24]:</div>
+<div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -1194,7 +1228,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [25]:</div>
+<div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">price</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="s">"AAPL"</span><span class="p">]</span> <span class="o">|&gt;</span> <span class="nd">@take</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -1218,7 +1252,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[25]:</div>
+<div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -1257,7 +1291,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [26]:</div>
+<div class="prompt input_prompt">In [27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">returns</span> <span class="o">|&gt;</span>
@@ -1275,7 +1309,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[26]:</div>
+<div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -1303,7 +1337,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [27]:</div>
+<div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">returnagg</span> <span class="o">=</span> <span class="n">returns</span> <span class="o">|&gt;</span>
@@ -1327,7 +1361,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[27]:</div>
+<div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -1376,7 +1410,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [28]:</div>
+<div class="prompt input_prompt">In [29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">returnagg</span> <span class="o">|&gt;</span>
@@ -1394,7 +1428,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[28]:</div>
+<div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -1410,7 +1444,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [29]:</div>
+<div class="prompt input_prompt">In [30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">shiftedreturns</span> <span class="o">=</span> <span class="n">returns</span> <span class="o">|&gt;</span>
@@ -1428,7 +1462,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[29]:</div>
+<div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -1467,7 +1501,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [30]:</div>
+<div class="prompt input_prompt">In [31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">correlation</span> <span class="o">=</span> <span class="n">shiftedreturns</span> <span class="o">|&gt;</span>
@@ -1492,7 +1526,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[30]:</div>
+<div class="prompt output_prompt">Out[31]:</div>
 
 
 
@@ -1531,7 +1565,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [31]:</div>
+<div class="prompt input_prompt">In [32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">correlation</span> <span class="o">|&gt;</span>
@@ -1548,7 +1582,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[31]:</div>
+<div class="prompt output_prompt">Out[32]:</div>
 
 
 
@@ -1588,7 +1622,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [32]:</div>
+<div class="prompt input_prompt">In [33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">function</span> <span class="n">solve_index_repr</span><span class="p">(</span><span class="n">nstocks</span><span class="p">)</span>
@@ -1635,7 +1669,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[32]:</div>
+<div class="prompt output_prompt">Out[33]:</div>
 
 
 
@@ -1652,7 +1686,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [33]:</div>
+<div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">sols_repr</span> <span class="o">=</span> <span class="p">[</span><span class="n">solve_index_repr</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="kp">in</span> <span class="n">nstocks_range</span><span class="p">];</span>
@@ -1665,7 +1699,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [34]:</div>
+<div class="prompt input_prompt">In [35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">reprweight</span> <span class="o">=</span> <span class="p">[(</span><span class="n">NStocks</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="kt">Symbol</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">SolWeight</span><span class="o">=</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="kp">in</span> <span class="n">nstocks_range</span>
@@ -1684,7 +1718,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[34]:</div>
+<div class="prompt output_prompt">Out[35]:</div>
 
 
 
@@ -1723,7 +1757,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [35]:</div>
+<div class="prompt input_prompt">In [36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">reprindices</span> <span class="o">=</span> <span class="n">price</span> <span class="o">|&gt;</span>
@@ -1743,7 +1777,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[35]:</div>
+<div class="prompt output_prompt">Out[36]:</div>
 
 
 
@@ -1782,7 +1816,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [36]:</div>
+<div class="prompt input_prompt">In [37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@vlplot</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span> <span class="o">+</span>
@@ -1803,7 +1837,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[36]:</div>
+<div class="prompt output_prompt">Out[37]:</div>
 
 
 
@@ -1842,7 +1876,7 @@ testdates[1] = 2016-10-03
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [37]:</div>
+<div class="prompt input_prompt">In [38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">count1</span> <span class="o">=</span> <span class="n">solweight</span> <span class="o">|&gt;</span>
@@ -1870,7 +1904,7 @@ testdates[1] = 2016-10-03
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[37]:</div>
+<div class="prompt output_prompt">Out[38]:</div>
 
 
 
