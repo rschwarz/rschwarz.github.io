@@ -6,59 +6,95 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://leethargo.github.io/categories/blog.xml</loc>
+  <lastmod>2018-03-24T15:47:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://leethargo.github.io/categories/cat_nikola.xml</loc>
+  <lastmod>2018-03-24T15:47:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://leethargo.github.io/categories/demo.xml</loc>
+  <lastmod>2018-03-24T15:47:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://leethargo.github.io/categories/errors.xml</loc>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://leethargo.github.io/categories/exceptions.xml</loc>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://leethargo.github.io/categories/finance.xml</loc>
-  <lastmod>2018-12-05T13:06:00Z</lastmod>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/categories/germany.xml</loc>
-  <lastmod>2018-10-24T18:45:00Z</lastmod>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/categories/julialang.xml</loc>
-  <lastmod>2018-12-05T13:06:00Z</lastmod>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/categories/microtonal.xml</loc>
-  <lastmod>2018-10-24T18:45:00Z</lastmod>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/categories/modeling.xml</loc>
-  <lastmod>2018-12-05T13:06:00Z</lastmod>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/categories/music.xml</loc>
-  <lastmod>2018-10-24T18:45:00Z</lastmod>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://leethargo.github.io/categories/nikola.xml</loc>
+  <lastmod>2018-03-24T15:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/categories/nutrition.xml</loc>
-  <lastmod>2018-10-24T18:45:00Z</lastmod>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/categories/optimization.xml</loc>
-  <lastmod>2018-12-05T13:06:00Z</lastmod>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/categories/parenting.xml</loc>
-  <lastmod>2018-10-24T18:45:00Z</lastmod>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://leethargo.github.io/categories/python.xml</loc>
+  <lastmod>2018-03-24T15:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/categories/taxes.xml</loc>
-  <lastmod>2018-10-24T18:45:00Z</lastmod>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/categories/work.xml</loc>
-  <lastmod>2018-10-24T18:45:00Z</lastmod>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/categories/xenharmonic.xml</loc>
-  <lastmod>2018-10-24T18:45:00Z</lastmod>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://leethargo.github.io/galleries/demo/rss.xml</loc>
+  <lastmod>2018-03-24T15:58:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://leethargo.github.io/galleries/rss.xml</loc>
+  <lastmod>2018-03-24T15:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/rss.xml</loc>
-  <lastmod>2018-12-05T13:06:00Z</lastmod>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://leethargo.github.io/sitemap.xml</loc>
-  <lastmod>2018-12-05T13:24:00Z</lastmod>
+  <lastmod>2019-01-29T15:19:00Z</lastmod>
  </sitemap>
 </sitemapindex>

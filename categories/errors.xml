@@ -1,0 +1,926 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frequently Answered Quantitatively (Posts about errors)</title><link>https://leethargo.github.io/</link><description></description><atom:link type="application/rss+xml" rel="self" href="https://leethargo.github.io/categories/errors.xml"></atom:link><language>en</language><lastBuildDate>Tue, 29 Jan 2019 15:21:15 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Managing Exceptions with ResultTypes</title><link>https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Managing-Exceptions-with-ResultTypes"&gt;Managing Exceptions with ResultTypes&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#Managing-Exceptions-with-ResultTypes"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In this post, we want to briefly review some examples of exception handling, present the &lt;a href="https://github.com/iamed2/ResultTypes.jl"&gt;ResultTypes&lt;/a&gt; package as an alternative and finally, show how these mechanisms can cooperate nicely.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Exceptions-in-Julia"&gt;Exceptions in Julia&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#Exceptions-in-Julia"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Julia supports &lt;a href="https://docs.julialang.org/en/v1/manual/control-flow/#Exception-Handling-1"&gt;Exceptions&lt;/a&gt; with mechanisms well-known from other languages:&lt;/p&gt;
+&lt;p&gt;A function can &lt;code&gt;throw&lt;/code&gt; an exception when facing invalid input or a situation that is in some otherwise unexpected.
+The caller can then &lt;em&gt;handle&lt;/em&gt; the exception by wrapping the function call in a &lt;code&gt;try&lt;/code&gt;/&lt;code&gt;catch&lt;/code&gt; block.
+If not handled, the exception will travel upwards on the call stack all the way to the REPL (or even stop the process) and print a stack trace. Julia offers several built-in exception types, one can also define custom &lt;code&gt;Exception&lt;/code&gt; types, or simply call the &lt;code&gt;error&lt;/code&gt; function as a shortcut to throw an &lt;code&gt;ErrorException&lt;/code&gt; with a given message.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="HTTP-example:-GET"&gt;HTTP example: GET&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#HTTP-example:-GET"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let's use a simple example function that wraps &lt;code&gt;HTTP.get&lt;/code&gt; and checks the URL for the transport protocol to demonstrate usage of exceptions.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="n"&gt;HTTP&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s"&gt;"GET given URL, if using HTTPS, else throw exception."&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="n"&gt;https_get1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;startswith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"https://"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;throw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;DomainError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&lt;/span&gt;&lt;span class="si"&gt;$url&lt;/span&gt;&lt;span class="s"&gt;: only HTTPS requests allowed!"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;HTTP&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;https_get1&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# Test it with a happy case, printing the result.&lt;/span&gt;
+&lt;span class="n"&gt;https_get1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"https://httpbin.org/status/200"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;HTTP.Messages.Response:
+"""
+HTTP/1.1 200 OK
+Connection: keep-alive
+Server: gunicorn/19.9.0
+Date: Sat, 26 Jan 2019 13:04:22 GMT
+Content-Type: text/html; charset=utf-8
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Content-Length: 0
+Via: 1.1 vegur
+
+"""&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# Test it with an error case, showing the stack trace and exception. &lt;/span&gt;
+&lt;span class="n"&gt;https_get1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"http://httpbin.org/status/200"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_text output_error"&gt;
+&lt;pre&gt;
+DomainError with http://httpbin.org/status/200: only HTTPS requests allowed!:
+
+
+Stacktrace:
+ [1] https_get1(::String) at ./In[2]:4
+ [2] top-level scope at In[4]:1&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In our case, we have an idea of how to fix the error causing issue, by changing the URL.
+Let's reiterate on our &lt;code&gt;https_get&lt;/code&gt; function by &lt;em&gt;handling&lt;/em&gt; the exception:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s"&gt;"GET with URL, enforce HTTPS via exception handling."&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="n"&gt;https_get2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;try&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;https_get1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;catch&lt;/span&gt; &lt;span class="nb"&gt;e&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;isa&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;e&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;DomainError&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;https_get1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"http"&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="s"&gt;"https"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt;
+            &lt;span class="n"&gt;rethrow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;end&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[5]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;https_get2&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# Try previous error case again, which is now fixed:&lt;/span&gt;
+&lt;span class="n"&gt;https_get2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"http://httpbin.org/status/200"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;HTTP.Messages.Response:
+"""
+HTTP/1.1 200 OK
+Connection: keep-alive
+Server: gunicorn/19.9.0
+Date: Sat, 26 Jan 2019 13:04:24 GMT
+Content-Type: text/html; charset=utf-8
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Content-Length: 0
+Via: 1.1 vegur
+
+"""&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [7]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# Try another error case, where an exception is thrown by the `HTTP` package,&lt;/span&gt;
+&lt;span class="c"&gt;# which we don't handle. Here, we are again shown the complete (because of rethrow)&lt;/span&gt;
+&lt;span class="c"&gt;# and long stack trace, full of HTTP.jl internals.&lt;/span&gt;
+&lt;span class="n"&gt;https_get2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"https://httpbin.org/status/404"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_text output_error"&gt;
+&lt;pre&gt;
+HTTP.ExceptionRequest.StatusError(404, HTTP.Messages.Response:
+"""
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Server: gunicorn/19.9.0
+Date: Sat, 26 Jan 2019 13:04:25 GMT
+Content-Type: text/html; charset=utf-8
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Content-Length: 0
+Via: 1.1 vegur
+
+""")
+
+Stacktrace:
+ [1] #request#1 at /home/rs/.julia/packages/HTTP/GN0Te/src/ExceptionRequest.jl:22 [inlined]
+ [2] (::getfield(HTTP, Symbol("#kw##request")))(::NamedTuple{(:iofunction,),Tuple{Nothing}}, ::typeof(HTTP.request), ::Type{HTTP.ExceptionRequest.ExceptionLayer{HTTP.ConnectionRequest.ConnectionPoolLayer{HTTP.StreamRequest.StreamLayer}}}, ::HTTP.URIs.URI, ::HTTP.Messages.Request, ::Array{UInt8,1}) at ./none:0
+ [3] (::getfield(Base, Symbol("###48#49#50")){ExponentialBackOff,getfield(HTTP.RetryRequest, Symbol("##2#3")){Bool,HTTP.Messages.Request},typeof(HTTP.request)})(::Base.Iterators.Pairs{Symbol,Nothing,Tuple{Symbol},NamedTuple{(:iofunction,),Tuple{Nothing}}}, ::Function, ::Type, ::Vararg{Any,N} where N) at ./error.jl:231
+ [4] ##48#51 at ./none:0 [inlined]
+ [5] #request#1 at /home/rs/.julia/packages/HTTP/GN0Te/src/RetryRequest.jl:44 [inlined]
+ [6] #request at ./none:0 [inlined]
+ [7] #request#1(::VersionNumber, ::String, ::Nothing, ::Nothing, ::Base.Iterators.Pairs{Union{},Union{},Tuple{},NamedTuple{(),Tuple{}}}, ::Function, ::Type{HTTP.MessageRequest.MessageLayer{HTTP.RetryRequest.RetryLayer{HTTP.ExceptionRequest.ExceptionLayer{HTTP.ConnectionRequest.ConnectionPoolLayer{HTTP.StreamRequest.StreamLayer}}}}}, ::String, ::HTTP.URIs.URI, ::Array{Pair{SubString{String},SubString{String}},1}, ::Array{UInt8,1}) at /home/rs/.julia/packages/HTTP/GN0Te/src/MessageRequest.jl:47
+ [8] request at /home/rs/.julia/packages/HTTP/GN0Te/src/MessageRequest.jl:28 [inlined]
+ [9] #request#1(::Int64, ::Bool, ::Base.Iterators.Pairs{Union{},Union{},Tuple{},NamedTuple{(),Tuple{}}}, ::Function, ::Type{HTTP.RedirectRequest.RedirectLayer{HTTP.MessageRequest.MessageLayer{HTTP.RetryRequest.RetryLayer{HTTP.ExceptionRequest.ExceptionLayer{HTTP.ConnectionRequest.ConnectionPoolLayer{HTTP.StreamRequest.StreamLayer}}}}}}, ::String, ::HTTP.URIs.URI, ::Array{Pair{SubString{String},SubString{String}},1}, ::Array{UInt8,1}) at /home/rs/.julia/packages/HTTP/GN0Te/src/RedirectRequest.jl:24
+ [10] request(::Type{HTTP.RedirectRequest.RedirectLayer{HTTP.MessageRequest.MessageLayer{HTTP.RetryRequest.RetryLayer{HTTP.ExceptionRequest.ExceptionLayer{HTTP.ConnectionRequest.ConnectionPoolLayer{HTTP.StreamRequest.StreamLayer}}}}}}, ::String, ::HTTP.URIs.URI, ::Array{Pair{SubString{String},SubString{String}},1}, ::Array{UInt8,1}) at /home/rs/.julia/packages/HTTP/GN0Te/src/RedirectRequest.jl:21
+ [11] #request#5(::Base.Iterators.Pairs{Union{},Union{},Tuple{},NamedTuple{(),Tuple{}}}, ::Function, ::String, ::HTTP.URIs.URI, ::Array{Pair{SubString{String},SubString{String}},1}, ::Array{UInt8,1}) at /home/rs/.julia/packages/HTTP/GN0Te/src/HTTP.jl:300
+ [12] #request#6 at /home/rs/.julia/packages/HTTP/GN0Te/src/HTTP.jl:300 [inlined]
+ [13] request at /home/rs/.julia/packages/HTTP/GN0Te/src/HTTP.jl:310 [inlined] (repeats 2 times)
+ [14] #get#13 at /home/rs/.julia/packages/HTTP/GN0Te/src/HTTP.jl:382 [inlined]
+ [15] get at /home/rs/.julia/packages/HTTP/GN0Te/src/HTTP.jl:382 [inlined]
+ [16] https_get1(::String) at ./In[2]:6
+ [17] https_get2(::String) at ./In[5]:4
+ [18] top-level scope at In[7]:1&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="ResultTypes"&gt;ResultTypes&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#ResultTypes"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;There is an alternative pattern of error handling that does not use exceptions, but communicates about success or failures with structural return values from functions. Rather than simply returning the actual result of the function, that value is wrapped in a parameterized type that could also contain an error description, for example in the form of an exception value.&lt;/p&gt;
+&lt;p&gt;The package &lt;a href="https://github.com/iamed2/ResultTypes.jl"&gt;ResultTypes&lt;/a&gt; provides a Julia implementation of this pattern and the README shows a usage example and benchmarks with performance benefits.&lt;/p&gt;
+&lt;p&gt;Another possible advantage is that it nudges developers to be more explicit about errors that could happen with function calls and might lead to dealing with the errors in a more local context. Further, the results (including errors) are just values (nothing special/magical) and can be dealt with programmatically. These points are also discussed in a &lt;a href="https://blog.golang.org/errors-are-values"&gt;blog post&lt;/a&gt; about error handling in Golang.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="GET-example-with-ResultTypes"&gt;GET example with ResultTypes&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#GET-example-with-ResultTypes"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let's try to see what our example &lt;code&gt;GET&lt;/code&gt; wrapper would look like if we used &lt;code&gt;ResultTypes&lt;/code&gt; rather than throwing an exception.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="n"&gt;ResultTypes&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s"&gt;"GET given URL, if using HTTPS, else return error value."&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="n"&gt;https_get3&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Result&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;HTTP&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Messages&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;DomainError&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;startswith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"https://"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kt"&gt;DomainError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"Insecure protocol!"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;HTTP&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;https_get3&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [10]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# Try happy case again, this time with wrapped result:&lt;/span&gt;
+&lt;span class="n"&gt;https_get3&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"https://httpbin.org/status/200"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[10]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;Result(HTTP.Messages.Response:
+"""
+HTTP/1.1 200 OK
+Connection: keep-alive
+Server: gunicorn/19.9.0
+Date: Sat, 26 Jan 2019 13:04:25 GMT
+Content-Type: text/html; charset=utf-8
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Content-Length: 0
+Via: 1.1 vegur
+
+""")&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [11]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# Try bad case again, resulting in error value.&lt;/span&gt;
+&lt;span class="n"&gt;https_get3&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"http://httpbin.org/status/200"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[11]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;ErrorResult(HTTP.Messages.Response, DomainError("http://httpbin.org/status/200", "Insecure protocol!"))&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [12]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# Try third-party exception, which is still thrown :-\&lt;/span&gt;
+&lt;span class="n"&gt;https_get3&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"https://httpbin.org/status/404"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_text output_error"&gt;
+&lt;pre&gt;
+HTTP.ExceptionRequest.StatusError(404, HTTP.Messages.Response:
+"""
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Server: gunicorn/19.9.0
+Date: Sat, 26 Jan 2019 13:04:26 GMT
+Content-Type: text/html; charset=utf-8
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Content-Length: 0
+Via: 1.1 vegur
+
+""")
+
+Stacktrace:
+ [1] #request#1 at /home/rs/.julia/packages/HTTP/GN0Te/src/ExceptionRequest.jl:22 [inlined]
+ [2] (::getfield(HTTP, Symbol("#kw##request")))(::NamedTuple{(:iofunction,),Tuple{Nothing}}, ::typeof(HTTP.request), ::Type{HTTP.ExceptionRequest.ExceptionLayer{HTTP.ConnectionRequest.ConnectionPoolLayer{HTTP.StreamRequest.StreamLayer}}}, ::HTTP.URIs.URI, ::HTTP.Messages.Request, ::Array{UInt8,1}) at ./none:0
+ [3] (::getfield(Base, Symbol("###48#49#50")){ExponentialBackOff,getfield(HTTP.RetryRequest, Symbol("##2#3")){Bool,HTTP.Messages.Request},typeof(HTTP.request)})(::Base.Iterators.Pairs{Symbol,Nothing,Tuple{Symbol},NamedTuple{(:iofunction,),Tuple{Nothing}}}, ::Function, ::Type, ::Vararg{Any,N} where N) at ./error.jl:231
+ [4] ##48#51 at ./none:0 [inlined]
+ [5] #request#1 at /home/rs/.julia/packages/HTTP/GN0Te/src/RetryRequest.jl:44 [inlined]
+ [6] #request at ./none:0 [inlined]
+ [7] #request#1(::VersionNumber, ::String, ::Nothing, ::Nothing, ::Base.Iterators.Pairs{Union{},Union{},Tuple{},NamedTuple{(),Tuple{}}}, ::Function, ::Type{HTTP.MessageRequest.MessageLayer{HTTP.RetryRequest.RetryLayer{HTTP.ExceptionRequest.ExceptionLayer{HTTP.ConnectionRequest.ConnectionPoolLayer{HTTP.StreamRequest.StreamLayer}}}}}, ::String, ::HTTP.URIs.URI, ::Array{Pair{SubString{String},SubString{String}},1}, ::Array{UInt8,1}) at /home/rs/.julia/packages/HTTP/GN0Te/src/MessageRequest.jl:47
+ [8] request at /home/rs/.julia/packages/HTTP/GN0Te/src/MessageRequest.jl:28 [inlined]
+ [9] #request#1(::Int64, ::Bool, ::Base.Iterators.Pairs{Union{},Union{},Tuple{},NamedTuple{(),Tuple{}}}, ::Function, ::Type{HTTP.RedirectRequest.RedirectLayer{HTTP.MessageRequest.MessageLayer{HTTP.RetryRequest.RetryLayer{HTTP.ExceptionRequest.ExceptionLayer{HTTP.ConnectionRequest.ConnectionPoolLayer{HTTP.StreamRequest.StreamLayer}}}}}}, ::String, ::HTTP.URIs.URI, ::Array{Pair{SubString{String},SubString{String}},1}, ::Array{UInt8,1}) at /home/rs/.julia/packages/HTTP/GN0Te/src/RedirectRequest.jl:24
+ [10] request(::Type{HTTP.RedirectRequest.RedirectLayer{HTTP.MessageRequest.MessageLayer{HTTP.RetryRequest.RetryLayer{HTTP.ExceptionRequest.ExceptionLayer{HTTP.ConnectionRequest.ConnectionPoolLayer{HTTP.StreamRequest.StreamLayer}}}}}}, ::String, ::HTTP.URIs.URI, ::Array{Pair{SubString{String},SubString{String}},1}, ::Array{UInt8,1}) at /home/rs/.julia/packages/HTTP/GN0Te/src/RedirectRequest.jl:21
+ [11] #request#5(::Base.Iterators.Pairs{Union{},Union{},Tuple{},NamedTuple{(),Tuple{}}}, ::Function, ::String, ::HTTP.URIs.URI, ::Array{Pair{SubString{String},SubString{String}},1}, ::Array{UInt8,1}) at /home/rs/.julia/packages/HTTP/GN0Te/src/HTTP.jl:300
+ [12] request at /home/rs/.julia/packages/HTTP/GN0Te/src/HTTP.jl:300 [inlined]
+ [13] #request#6 at /home/rs/.julia/packages/HTTP/GN0Te/src/HTTP.jl:314 [inlined]
+ [14] request at /home/rs/.julia/packages/HTTP/GN0Te/src/HTTP.jl:310 [inlined] (repeats 2 times)
+ [15] #get#13 at /home/rs/.julia/packages/HTTP/GN0Te/src/HTTP.jl:382 [inlined]
+ [16] get at /home/rs/.julia/packages/HTTP/GN0Te/src/HTTP.jl:382 [inlined]
+ [17] https_get3(::String) at ./In[9]:6
+ [18] top-level scope at In[12]:1&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;As we have seen in the last example, even if we decide to use &lt;code&gt;ResultTypes&lt;/code&gt; in our code, we are not safe from exceptions being thrown in the calls below.&lt;/p&gt;
+&lt;p&gt;Does that limit the scope of the pattern and its implementation with &lt;code&gt;ResultTypes&lt;/code&gt;? Can we only use it &lt;em&gt;internally&lt;/em&gt; within our libraries, but still deal with exceptions bubbling up from other code?&lt;/p&gt;
+&lt;p&gt;What should we do about return values in user-facing functions in our library API? We can not expect everybody to learn
+about and deal with two different patterns of error handling just to use our library.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Systematic-Error-Handling-in-C++"&gt;Systematic Error-Handling in C++&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#Systematic-Error-Handling-in-C++"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;I was reminded of &lt;code&gt;ResultTypes&lt;/code&gt; recently, when I researched error handling patterns in C++, and stumbled upon a talk titled "Systematic Error-Handling in C++" by Andrei Alexandrescu (&lt;a href="https://channel9.msdn.com/Shows/Going+Deep/C-and-Beyond-2012-Andrei-Alexandrescu-Systematic-Error-Handling-in-C"&gt;video&lt;/a&gt;, &lt;a href="https://onedrive.live.com/?cid=F1B8FF18A2AEC5C5&amp;amp;id=F1B8FF18A2AEC5C5%211158&amp;amp;parId=root&amp;amp;o=OneUp"&gt;slides&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;In the first half of the presentation, he motivates and sketches the implementation of an &lt;code&gt;Expected&amp;lt;T&amp;gt;&lt;/code&gt; type which is equivalent to what is done in &lt;code&gt;ResultTypes&lt;/code&gt;. In addition to the advantages shown above, he also mentions dealing with errors across threads (multiple simultaneous exceptions being thrown), but I'm not sure how this applies to Julia.&lt;/p&gt;
+&lt;p&gt;Most interesting to me was slide 27 (&lt;em&gt;Icing&lt;/em&gt;) with this definition of &lt;code&gt;fromCode&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;template &amp;lt;class F&amp;gt;
+static Expected fromCode(F fun) {
+    try {
+        returnExpected(fun());
+    } catch(...) {
+        return fromException();
+    }
+}
+
+auto r = Expected&amp;lt;string&amp;gt;::fromCode([] {...});&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This provides a bridge between the worlds of exception-throwing and result-returning. Thrown exceptions are captured and instead returned as error values. This applies in particular to the case where we call functions from third-party libraries.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Wrapping-Callees"&gt;Wrapping Callees&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#Wrapping-Callees"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We repeat our example function, but attempt to capture all exceptions (including those from &lt;code&gt;HTTP&lt;/code&gt;) and work with result values exclusively.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [13]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s"&gt;"GET given URL using HTTPS or return error value."&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="n"&gt;https_get4&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;startswith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"https://"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ErrorResult&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;DomainError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"Insecure protocol!"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+    &lt;span class="k"&gt;try&lt;/span&gt;
+        &lt;span class="c"&gt;# Happy path: wrap result value.&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;Result&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;HTTP&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="k"&gt;catch&lt;/span&gt; &lt;span class="nb"&gt;e&lt;/span&gt;
+        &lt;span class="c"&gt;# Turn all exceptions into error values.&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ErrorResult&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[13]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;https_get4&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [14]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# Test our own error case.&lt;/span&gt;
+&lt;span class="n"&gt;https_get4&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"http://httpbin.org/status/200"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[14]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;ErrorResult(Any, DomainError("http://httpbin.org/status/200", "Insecure protocol!"))&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [15]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# Test error case in called function, also resulting in error value,&lt;/span&gt;
+&lt;span class="c"&gt;# no longer an exception with stack trace etc.&lt;/span&gt;
+&lt;span class="n"&gt;https_get4&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"https://httpbin.org/status/400"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[15]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;ErrorResult(Any, HTTP.ExceptionRequest.StatusError(400, HTTP.Messages.Response:
+"""
+HTTP/1.1 400 Bad Request
+Connection: keep-alive
+Server: gunicorn/19.9.0
+Date: Sat, 26 Jan 2019 13:04:27 GMT
+Content-Type: text/html; charset=utf-8
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Content-Length: 0
+Via: 1.1 vegur
+
+"""))&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Wrapping-for-Callers"&gt;Wrapping for Callers&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#Wrapping-for-Callers"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let us assume that &lt;code&gt;https_get4&lt;/code&gt; was our library-internal utility function, but we would like to expose a version to our library users. They are expecting exceptions, so we throw them in case of error values:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [16]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s"&gt;"GET from URL with HTTPS or throw exception."&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="n"&gt;https_get5&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;https_get4&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ResultTypes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iserror&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="c"&gt;# Error case, get exception and throw it.&lt;/span&gt;
+        &lt;span class="n"&gt;throw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unwrap_error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;
+    &lt;span class="c"&gt;# Happy case, return the raw result.&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;unwrap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[16]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;https_get5&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [17]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# Test working case, returning raw result.&lt;/span&gt;
+&lt;span class="n"&gt;https_get5&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"https://httpbin.org/status/200"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt output_prompt"&gt;Out[17]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;HTTP.Messages.Response:
+"""
+HTTP/1.1 200 OK
+Connection: keep-alive
+Server: gunicorn/19.9.0
+Date: Sat, 26 Jan 2019 13:04:28 GMT
+Content-Type: text/html; charset=utf-8
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Content-Length: 0
+Via: 1.1 vegur
+
+"""&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [18]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# Test with our error (using HTTP), now thrown as exception.&lt;/span&gt;
+&lt;span class="n"&gt;https_get5&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"http://httpbin.org/status/200"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_text output_error"&gt;
+&lt;pre&gt;
+DomainError with http://httpbin.org/status/200:
+Insecure protocol!
+
+Stacktrace:
+ [1] https_get5(::String) at ./In[16]:6
+ [2] top-level scope at In[18]:1&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [19]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-julia"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# Test with third-party error, also thrown as exception.&lt;/span&gt;
+&lt;span class="n"&gt;https_get5&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"https://httpbin.org/status/500"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_text output_error"&gt;
+&lt;pre&gt;
+HTTP.ExceptionRequest.StatusError(500, HTTP.Messages.Response:
+"""
+HTTP/1.1 500 Internal Server Error
+Connection: keep-alive
+Server: gunicorn/19.9.0
+Date: Sat, 26 Jan 2019 13:04:39 GMT
+Content-Type: text/html; charset=utf-8
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Content-Length: 0
+Via: 1.1 vegur
+
+""")
+
+Stacktrace:
+ [1] https_get5(::String) at ./In[16]:6
+ [2] top-level scope at In[19]:1&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Notice that the stack trace in the last example is shallow. That is, it starts from the &lt;code&gt;throw&lt;/code&gt; statement in our own functions and does no longer contain the levels below from where the exception originates.&lt;/p&gt;
+&lt;p&gt;This can be seen as positive or negative, but in any case, I don't know how it could be changed. Use of &lt;code&gt;rethrow&lt;/code&gt; is not allowed here, because there is no &lt;code&gt;try&lt;/code&gt;/&lt;code&gt;catch&lt;/code&gt; block.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Conclusion"&gt;Conclusion&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#Conclusion"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We have seen how we can bridge between the patterns of throwing exceptions and return error values, easily and in both directions. Maybe this will convince some developers to use &lt;code&gt;ResultValues&lt;/code&gt; in their own packages?&lt;/p&gt;
+&lt;p&gt;So far, I have only detected its use in &lt;a href="https://github.com/invenia/Dispatcher.jl"&gt;Dispatcher.jl&lt;/a&gt;. Please share your experiences with error handling in Julia!&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</description><category>errors</category><category>exceptions</category><category>julialang</category><guid>https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/</guid><pubDate>Tue, 29 Jan 2019 13:00:00 GMT</pubDate></item></channel></rss>
