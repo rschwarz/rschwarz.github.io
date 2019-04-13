@@ -11,7 +11,7 @@
 
 Personal blog of Robert Schwarz. Here, I play with new
 [Julia](https://julialang.org/) packages, experiment with [optimization
-models](https://juliaopt.org) and deal with my shower thoughts through
+models](https://jump.dev) and deal with my shower thoughts through
 computation and visualization.
 
-See [GitHub](https://github.com/leethargo) for sources and actual projects.
+See [GitHub](https://github.com/robertschwarz) for sources and actual projects.
