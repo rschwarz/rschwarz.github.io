@@ -8,10 +8,10 @@ BLOG_AUTHOR = "Robert Schwarz"  # (translatable)
 BLOG_TITLE = "Frequently Answered Quantitatively"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "https://robertschwarz.github.io/"
+SITE_URL = "https://rschwarz.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "https://robertschwarz.github.io/"
+# BASE_URL = "https://rschwarz.github.io/"
 BLOG_EMAIL = "mail@rschwarz.net"
 BLOG_DESCRIPTION = "Random thoughts and experiments."  # (translatable)
 

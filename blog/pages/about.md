@@ -14,4 +14,4 @@ Personal blog of Robert Schwarz. Here, I play with new
 models](https://jump.dev) and deal with my shower thoughts through
 computation and visualization.
 
-See [GitHub](https://github.com/robertschwarz) for sources and actual projects.
+See [GitHub](https://github.com/rschwarz) for sources and actual projects.
