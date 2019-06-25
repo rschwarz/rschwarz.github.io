@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frequently Answered Quantitatively (Posts about germany)</title><link>https://leethargo.github.io/</link><description></description><atom:link href="https://leethargo.github.io/categories/germany.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 29 Jan 2019 15:19:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Marginal Net Income in Germany</title><link>https://leethargo.github.io/posts/marginal-net-income-in-germany/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Frequently Answered Quantitatively (Posts about germany)</title><link>https://rschwarz.github.io/</link><description></description><atom:link href="https://rschwarz.github.io/categories/germany.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 25 Jun 2019 09:12:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Marginal Net Income in Germany</title><link>https://rschwarz.github.io/posts/marginal-net-income-in-germany/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
@@ -50,7 +50,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Social-costs"&gt;Social costs&lt;a class="anchor-link" href="https://leethargo.github.io/posts/marginal-net-income-in-germany/#Social-costs"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;For simplicity, we ignore the possibility of private health insurance and assume that our typical employee participates in the public social system. This includes health insurance, &lt;em&gt;unemployment insurance&lt;/em&gt; and payments to the pension system.&lt;/p&gt;
+&lt;h3 id="Social-costs"&gt;Social costs&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/marginal-net-income-in-germany/#Social-costs"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;For simplicity, we ignore the possibility of private health insurance and assume that our typical employee participates in the public social system. This includes health insurance, &lt;em&gt;unemployment insurance&lt;/em&gt; and payments to the pension system.&lt;/p&gt;
 &lt;p&gt;These payments are split evenly between the employer and employee. This means that the labor cost of the employer is higher than the gross salary paid.&lt;/p&gt;
 &lt;p&gt;Source: &lt;a href="https://www.nettolohn.de"&gt;nettolohn.de&lt;/a&gt;&lt;/p&gt;
 
@@ -727,7 +727,7 @@ Further, some portion of that remainder is also free from taxes.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Income-tax"&gt;Income tax&lt;a class="anchor-link" href="https://leethargo.github.io/posts/marginal-net-income-in-germany/#Income-tax"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The tax rate is a piece-wise defined function.
+&lt;h3 id="Income-tax"&gt;Income tax&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/marginal-net-income-in-germany/#Income-tax"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The tax rate is a piece-wise defined function.
 We assume an unmarried employee with no kids who is not taxable by any church.&lt;/p&gt;
 &lt;p&gt;The source below actually contains flow charts with details conditions, thresholds and rounding of intermediate results.
 I can't be bothered to understand all of that, so I will try to extract the essential information.&lt;/p&gt;
@@ -1258,7 +1258,7 @@ I can't be bothered to understand all of that, so I will try to extract the esse
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Net-income"&gt;Net income&lt;a class="anchor-link" href="https://leethargo.github.io/posts/marginal-net-income-in-germany/#Net-income"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Now, let's combine the social costs and taxes to compute the net income.&lt;/p&gt;
+&lt;h3 id="Net-income"&gt;Net income&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/marginal-net-income-in-germany/#Net-income"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Now, let's combine the social costs and taxes to compute the net income.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1805,7 +1805,7 @@ I can't be bothered to understand all of that, so I will try to extract the esse
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Marginal-income"&gt;Marginal income&lt;a class="anchor-link" href="https://leethargo.github.io/posts/marginal-net-income-in-germany/#Marginal-income"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The analysis above can be slightly misleading. If we are currently earning a certain income and have an opportunity to raise the income, this might also decrease our relative net income. However, higher rates for social cost and income tax are applied equally to the &lt;em&gt;previous&lt;/em&gt; and &lt;em&gt;additional&lt;/em&gt; income.&lt;/p&gt;
+&lt;h3 id="Marginal-income"&gt;Marginal income&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/marginal-net-income-in-germany/#Marginal-income"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The analysis above can be slightly misleading. If we are currently earning a certain income and have an opportunity to raise the income, this might also decrease our relative net income. However, higher rates for social cost and income tax are applied equally to the &lt;em&gt;previous&lt;/em&gt; and &lt;em&gt;additional&lt;/em&gt; income.&lt;/p&gt;
 &lt;p&gt;If we want to show how much net income we can retain for each additional EUR earned, we have take some more care.
 Here, we approximate the slope of the net income as a function of real income using a symmetric difference quotient.
 There are some jumps in that curve since our net income is not smooth.&lt;/p&gt;
@@ -2152,7 +2152,7 @@ There are some jumps in that curve since our net income is not smooth.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Part-time-work-and-hourly-income"&gt;Part-time work and hourly income&lt;a class="anchor-link" href="https://leethargo.github.io/posts/marginal-net-income-in-germany/#Part-time-work-and-hourly-income"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We have seen that a lower gross income often corresponds to a higher relative net income.
+&lt;h3 id="Part-time-work-and-hourly-income"&gt;Part-time work and hourly income&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/marginal-net-income-in-germany/#Part-time-work-and-hourly-income"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We have seen that a lower gross income often corresponds to a higher relative net income.
 If we have the option to reduce our working hours, we should be able to increase our income per hour.&lt;/p&gt;
 &lt;p&gt;Let's assume a 40 hour work-week and 4 weeks per month.&lt;/p&gt;
 
@@ -2790,4 +2790,4 @@ With a high enough income, reducing the work load yields less and less increase 
 &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-</description><category>finance</category><category>germany</category><category>julialang</category><category>taxes</category><category>work</category><guid>https://leethargo.github.io/posts/marginal-net-income-in-germany/</guid><pubDate>Sat, 24 Mar 2018 21:10:46 GMT</pubDate></item></channel></rss>
+</description><category>finance</category><category>germany</category><category>julialang</category><category>taxes</category><category>work</category><guid>https://rschwarz.github.io/posts/marginal-net-income-in-germany/</guid><pubDate>Sat, 24 Mar 2018 21:10:46 GMT</pubDate></item></channel></rss>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frequently Answered Quantitatively (Posts about music)</title><link>https://leethargo.github.io/</link><description></description><atom:link href="https://leethargo.github.io/categories/music.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 29 Jan 2019 15:19:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Consonant Triads</title><link>https://leethargo.github.io/posts/consonant-triads/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Frequently Answered Quantitatively (Posts about music)</title><link>https://rschwarz.github.io/</link><description></description><atom:link href="https://rschwarz.github.io/categories/music.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 25 Jun 2019 09:12:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Consonant Triads</title><link>https://rschwarz.github.io/posts/consonant-triads/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
@@ -49,7 +49,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Plomp-Levelt-dissonance-curve"&gt;Plomp-Levelt dissonance curve&lt;a class="anchor-link" href="https://leethargo.github.io/posts/consonant-triads/#Plomp-Levelt-dissonance-curve"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;As a basis of our investigation, we use the Plomp-Levelt dissonance curve as explained in &lt;a href="http://sethares.engr.wisc.edu/consemi.html"&gt;this article&lt;/a&gt; by William Sethares.&lt;/p&gt;
+&lt;h3 id="Plomp-Levelt-dissonance-curve"&gt;Plomp-Levelt dissonance curve&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/consonant-triads/#Plomp-Levelt-dissonance-curve"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;As a basis of our investigation, we use the Plomp-Levelt dissonance curve as explained in &lt;a href="http://sethares.engr.wisc.edu/consemi.html"&gt;this article&lt;/a&gt; by William Sethares.&lt;/p&gt;
 &lt;p&gt;The curve models the fact that similar frequencies appear dissonant because of "friction" between the adjacent sensors in our ears.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -301,7 +301,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Dissonance-with-harmonics"&gt;Dissonance with harmonics&lt;a class="anchor-link" href="https://leethargo.github.io/posts/consonant-triads/#Dissonance-with-harmonics"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rather than analyzing dissonance between sinusoidal sounds, we also want to consider sounds with rich harmonics. These have sounds at multiple frequencies with declining amplitudes. When computing the dissonance between two pitches with harmonics, we have to add the dissonance values for all combinations of frequencies.&lt;/p&gt;
+&lt;h3 id="Dissonance-with-harmonics"&gt;Dissonance with harmonics&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/consonant-triads/#Dissonance-with-harmonics"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Rather than analyzing dissonance between sinusoidal sounds, we also want to consider sounds with rich harmonics. These have sounds at multiple frequencies with declining amplitudes. When computing the dissonance between two pitches with harmonics, we have to add the dissonance values for all combinations of frequencies.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1283,7 +1283,7 @@ Because of the richer harmonices, there is more interaction and more dissonance 
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Triads"&gt;Triads&lt;a class="anchor-link" href="https://leethargo.github.io/posts/consonant-triads/#Triads"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We will now compute the dissonaces for triads of tones in an analoguous fashion.
+&lt;h3 id="Triads"&gt;Triads&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/consonant-triads/#Triads"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We will now compute the dissonaces for triads of tones in an analoguous fashion.
 But this time, we will only evaluate a discrete set of pitches, based on a 12-tone scale, dividing the octave in equal steps.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -2395,7 +2395,7 @@ hZDv0WLW22sAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Bohlen-Pierce-Scale"&gt;Bohlen-Pierce Scale&lt;a class="anchor-link" href="https://leethargo.github.io/posts/consonant-triads/#Bohlen-Pierce-Scale"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;One way to view the conventional western scale is as a division of an octave (that is, a 2:1 ratio of frequency) in 12 (more or less) equal steps. Alternatively, one can start at the ratios 4:5:6 (appearing naturally as harmonics) and collect pitches that are reached from these recursively.&lt;/p&gt;
+&lt;h3 id="Bohlen-Pierce-Scale"&gt;Bohlen-Pierce Scale&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/consonant-triads/#Bohlen-Pierce-Scale"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;One way to view the conventional western scale is as a division of an octave (that is, a 2:1 ratio of frequency) in 12 (more or less) equal steps. Alternatively, one can start at the ratios 4:5:6 (appearing naturally as harmonics) and collect pitches that are reached from these recursively.&lt;/p&gt;
 &lt;p&gt;In the &lt;a href="http://www.huygens-fokker.org/bpsite/"&gt;Bohlen-Pierce&lt;/a&gt; scale, we range over a tritave (a 3:1 ratio) in 13 steps. This can also be derived using ratios 3:5:7. The scale is well-suited for instruments that only feature &lt;a href="https://www.soundonsound.com/techniques/synthesizing-pan-pipes"&gt;odd harmonics&lt;/a&gt;, such as the &lt;a href="https://en.wikipedia.org/wiki/Clarinet#Acoustics"&gt;clarinet&lt;/a&gt; or the &lt;a href="http://bohlen-pierce-conference.org/bohlen-pierce-instruments/pan-flute"&gt;pan flute&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -3472,7 +3472,7 @@ hZDv0WLW22sAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Larger-Pitch-Ranges"&gt;Larger Pitch Ranges&lt;a class="anchor-link" href="https://leethargo.github.io/posts/consonant-triads/#Larger-Pitch-Ranges"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We will generate some more heatmaps covering two octaves or tritaves, each time based on sawtooth waves.&lt;/p&gt;
+&lt;h3 id="Larger-Pitch-Ranges"&gt;Larger Pitch Ranges&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/consonant-triads/#Larger-Pitch-Ranges"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We will generate some more heatmaps covering two octaves or tritaves, each time based on sawtooth waves.&lt;/p&gt;
 &lt;p&gt;First the 12-tone octaves:&lt;/p&gt;
 
 &lt;/div&gt;
@@ -4565,4 +4565,4 @@ hZDv0WLW22sAAAAASUVORK5CYII=
 &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-</description><category>julialang</category><category>microtonal</category><category>music</category><category>xenharmonic</category><guid>https://leethargo.github.io/posts/consonant-triads/</guid><pubDate>Wed, 30 May 2018 09:00:00 GMT</pubDate></item></channel></rss>
+</description><category>julialang</category><category>microtonal</category><category>music</category><category>xenharmonic</category><guid>https://rschwarz.github.io/posts/consonant-triads/</guid><pubDate>Wed, 30 May 2018 09:00:00 GMT</pubDate></item></channel></rss>

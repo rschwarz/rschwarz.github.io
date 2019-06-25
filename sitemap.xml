@@ -6,215 +6,103 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>https://leethargo.github.io/</loc>
-  <lastmod>2019-01-29T15:19:00Z</lastmod>
+  <loc>https://rschwarz.github.io/</loc>
+  <lastmod>2019-06-25T09:12:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/2012/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
+  <loc>https://rschwarz.github.io/2018/</loc>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/2018/</loc>
-  <lastmod>2018-03-24T16:15:00Z</lastmod>
+  <loc>https://rschwarz.github.io/2019/</loc>
+  <lastmod>2019-06-25T09:12:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/2019/</loc>
-  <lastmod>2019-01-29T15:19:00Z</lastmod>
+  <loc>https://rschwarz.github.io/archive.html</loc>
+  <lastmod>2019-06-25T09:12:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/archive.html</loc>
-  <lastmod>2019-01-29T15:19:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/</loc>
+  <lastmod>2019-06-25T09:12:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/</loc>
-  <lastmod>2019-01-29T15:19:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/errors/</loc>
+  <lastmod>2019-06-25T09:12:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/blog/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/exceptions/</loc>
+  <lastmod>2019-06-25T09:12:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/cat_nikola/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/finance/</loc>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/demo/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/germany/</loc>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/errors/</loc>
-  <lastmod>2019-01-29T15:19:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/julialang/</loc>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/exceptions/</loc>
-  <lastmod>2019-01-29T15:19:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/microtonal/</loc>
+  <lastmod>2018-05-30T09:34:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/finance/</loc>
-  <lastmod>2018-05-12T22:18:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/modeling/</loc>
+  <lastmod>2018-10-04T09:14:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/germany/</loc>
-  <lastmod>2018-05-12T22:18:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/music/</loc>
+  <lastmod>2018-05-30T09:34:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/julialang/</loc>
-  <lastmod>2018-05-12T22:18:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/nutrition/</loc>
+  <lastmod>2018-10-04T09:14:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/microtonal/</loc>
-  <lastmod>2018-05-12T22:18:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/optimization/</loc>
+  <lastmod>2018-10-04T09:14:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/modeling/</loc>
-  <lastmod>2019-01-29T15:19:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/parenting/</loc>
+  <lastmod>2018-10-04T09:14:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/music/</loc>
-  <lastmod>2018-05-12T22:18:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/taxes/</loc>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/nikola/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/work/</loc>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/nutrition/</loc>
-  <lastmod>2019-01-29T15:19:00Z</lastmod>
+  <loc>https://rschwarz.github.io/categories/xenharmonic/</loc>
+  <lastmod>2018-05-30T09:34:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/optimization/</loc>
-  <lastmod>2019-01-29T15:19:00Z</lastmod>
+  <loc>https://rschwarz.github.io/pages/about/</loc>
+  <lastmod>2018-12-05T13:25:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/parenting/</loc>
-  <lastmod>2019-01-29T15:19:00Z</lastmod>
+  <loc>https://rschwarz.github.io/posts/consonant-triads/</loc>
+  <lastmod>2018-05-30T09:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/python/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
+  <loc>https://rschwarz.github.io/posts/index-funds-with-mixed-integer-programming/</loc>
+  <lastmod>2018-12-04T21:08:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/taxes/</loc>
-  <lastmod>2018-05-12T22:18:00Z</lastmod>
+  <loc>https://rschwarz.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/</loc>
+  <lastmod>2018-10-04T09:12:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/work/</loc>
-  <lastmod>2018-05-12T22:18:00Z</lastmod>
+  <loc>https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/</loc>
+  <lastmod>2019-06-25T09:12:00Z</lastmod>
  </url>
  <url>
-  <loc>https://leethargo.github.io/categories/xenharmonic/</loc>
-  <lastmod>2018-05-12T22:18:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/galleries/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/galleries/demo/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/listings/</loc>
-  <lastmod>2018-03-24T16:15:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/listings/__pycache__/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/listings/hello.py.html</loc>
-  <lastmod>2018-03-24T15:58:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/about-nikola/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/about/</loc>
-  <lastmod>2019-01-29T15:19:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/bootstrap-demo/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/charts/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/creating-a-theme/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/dr-nikolas-vendetta/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/extending/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/handbook/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/internals/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/listings-demo/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/path-handlers/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/quickref/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/quickstart/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/slides-demo/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/social_buttons/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/pages/theming/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/posts/consonant-triads/</loc>
-  <lastmod>2018-05-12T22:18:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/posts/index-funds-with-mixed-integer-programming/</loc>
-  <lastmod>2019-01-29T15:19:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/</loc>
-  <lastmod>2019-01-29T15:19:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/</loc>
-  <lastmod>2019-01-29T15:19:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/posts/marginal-net-income-in-germany/</loc>
-  <lastmod>2018-05-12T22:18:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/posts/test/</loc>
-  <lastmod>2018-03-24T16:15:00Z</lastmod>
- </url>
- <url>
-  <loc>https://leethargo.github.io/posts/welcome-to-nikola/</loc>
-  <lastmod>2018-03-24T15:47:00Z</lastmod>
+  <loc>https://rschwarz.github.io/posts/marginal-net-income-in-germany/</loc>
+  <lastmod>2018-03-25T11:24:00Z</lastmod>
  </url>
 </urlset>

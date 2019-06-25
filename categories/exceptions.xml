@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frequently Answered Quantitatively (Posts about exceptions)</title><link>https://leethargo.github.io/</link><description></description><atom:link type="application/rss+xml" rel="self" href="https://leethargo.github.io/categories/exceptions.xml"></atom:link><language>en</language><lastBuildDate>Tue, 29 Jan 2019 15:21:15 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Managing Exceptions with ResultTypes</title><link>https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Frequently Answered Quantitatively (Posts about exceptions)</title><link>https://rschwarz.github.io/</link><description></description><atom:link href="https://rschwarz.github.io/categories/exceptions.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 25 Jun 2019 09:12:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Managing Exceptions with ResultTypes</title><link>https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Managing-Exceptions-with-ResultTypes"&gt;Managing Exceptions with ResultTypes&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#Managing-Exceptions-with-ResultTypes"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In this post, we want to briefly review some examples of exception handling, present the &lt;a href="https://github.com/iamed2/ResultTypes.jl"&gt;ResultTypes&lt;/a&gt; package as an alternative and finally, show how these mechanisms can cooperate nicely.&lt;/p&gt;
+&lt;h2 id="Managing-Exceptions-with-ResultTypes"&gt;Managing Exceptions with ResultTypes&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/#Managing-Exceptions-with-ResultTypes"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In this post, we want to briefly review some examples of exception handling, present the &lt;a href="https://github.com/iamed2/ResultTypes.jl"&gt;ResultTypes&lt;/a&gt; package as an alternative and finally, show how these mechanisms can cooperate nicely.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -15,7 +15,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Exceptions-in-Julia"&gt;Exceptions in Julia&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#Exceptions-in-Julia"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Julia supports &lt;a href="https://docs.julialang.org/en/v1/manual/control-flow/#Exception-Handling-1"&gt;Exceptions&lt;/a&gt; with mechanisms well-known from other languages:&lt;/p&gt;
+&lt;h3 id="Exceptions-in-Julia"&gt;Exceptions in Julia&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/#Exceptions-in-Julia"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Julia supports &lt;a href="https://docs.julialang.org/en/v1/manual/control-flow/#Exception-Handling-1"&gt;Exceptions&lt;/a&gt; with mechanisms well-known from other languages:&lt;/p&gt;
 &lt;p&gt;A function can &lt;code&gt;throw&lt;/code&gt; an exception when facing invalid input or a situation that is in some otherwise unexpected.
 The caller can then &lt;em&gt;handle&lt;/em&gt; the exception by wrapping the function call in a &lt;code&gt;try&lt;/code&gt;/&lt;code&gt;catch&lt;/code&gt; block.
 If not handled, the exception will travel upwards on the call stack all the way to the REPL (or even stop the process) and print a stack trace. Julia offers several built-in exception types, one can also define custom &lt;code&gt;Exception&lt;/code&gt; types, or simply call the &lt;code&gt;error&lt;/code&gt; function as a shortcut to throw an &lt;code&gt;ErrorException&lt;/code&gt; with a given message.&lt;/p&gt;
@@ -27,7 +27,7 @@ If not handled, the exception will travel upwards on the call stack all the way 
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="HTTP-example:-GET"&gt;HTTP example: GET&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#HTTP-example:-GET"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let's use a simple example function that wraps &lt;code&gt;HTTP.get&lt;/code&gt; and checks the URL for the transport protocol to demonstrate usage of exceptions.&lt;/p&gt;
+&lt;h3 id="HTTP-example:-GET"&gt;HTTP example: GET&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/#HTTP-example:-GET"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let's use a simple example function that wraps &lt;code&gt;HTTP.get&lt;/code&gt; and checks the URL for the transport protocol to demonstrate usage of exceptions.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -337,7 +337,7 @@ Stacktrace:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="ResultTypes"&gt;ResultTypes&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#ResultTypes"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;There is an alternative pattern of error handling that does not use exceptions, but communicates about success or failures with structural return values from functions. Rather than simply returning the actual result of the function, that value is wrapped in a parameterized type that could also contain an error description, for example in the form of an exception value.&lt;/p&gt;
+&lt;h3 id="ResultTypes"&gt;ResultTypes&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/#ResultTypes"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;There is an alternative pattern of error handling that does not use exceptions, but communicates about success or failures with structural return values from functions. Rather than simply returning the actual result of the function, that value is wrapped in a parameterized type that could also contain an error description, for example in the form of an exception value.&lt;/p&gt;
 &lt;p&gt;The package &lt;a href="https://github.com/iamed2/ResultTypes.jl"&gt;ResultTypes&lt;/a&gt; provides a Julia implementation of this pattern and the README shows a usage example and benchmarks with performance benefits.&lt;/p&gt;
 &lt;p&gt;Another possible advantage is that it nudges developers to be more explicit about errors that could happen with function calls and might lead to dealing with the errors in a more local context. Further, the results (including errors) are just values (nothing special/magical) and can be dealt with programmatically. These points are also discussed in a &lt;a href="https://blog.golang.org/errors-are-values"&gt;blog post&lt;/a&gt; about error handling in Golang.&lt;/p&gt;
 
@@ -348,7 +348,7 @@ Stacktrace:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="GET-example-with-ResultTypes"&gt;GET example with ResultTypes&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#GET-example-with-ResultTypes"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let's try to see what our example &lt;code&gt;GET&lt;/code&gt; wrapper would look like if we used &lt;code&gt;ResultTypes&lt;/code&gt; rather than throwing an exception.&lt;/p&gt;
+&lt;h3 id="GET-example-with-ResultTypes"&gt;GET example with ResultTypes&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/#GET-example-with-ResultTypes"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let's try to see what our example &lt;code&gt;GET&lt;/code&gt; wrapper would look like if we used &lt;code&gt;ResultTypes&lt;/code&gt; rather than throwing an exception.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -565,7 +565,7 @@ about and deal with two different patterns of error handling just to use our lib
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Systematic-Error-Handling-in-C++"&gt;Systematic Error-Handling in C++&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#Systematic-Error-Handling-in-C++"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;I was reminded of &lt;code&gt;ResultTypes&lt;/code&gt; recently, when I researched error handling patterns in C++, and stumbled upon a talk titled "Systematic Error-Handling in C++" by Andrei Alexandrescu (&lt;a href="https://channel9.msdn.com/Shows/Going+Deep/C-and-Beyond-2012-Andrei-Alexandrescu-Systematic-Error-Handling-in-C"&gt;video&lt;/a&gt;, &lt;a href="https://onedrive.live.com/?cid=F1B8FF18A2AEC5C5&amp;amp;id=F1B8FF18A2AEC5C5%211158&amp;amp;parId=root&amp;amp;o=OneUp"&gt;slides&lt;/a&gt;).&lt;/p&gt;
+&lt;h3 id="Systematic-Error-Handling-in-C++"&gt;Systematic Error-Handling in C++&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/#Systematic-Error-Handling-in-C++"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;I was reminded of &lt;code&gt;ResultTypes&lt;/code&gt; recently, when I researched error handling patterns in C++, and stumbled upon a talk titled "Systematic Error-Handling in C++" by Andrei Alexandrescu (&lt;a href="https://channel9.msdn.com/Shows/Going+Deep/C-and-Beyond-2012-Andrei-Alexandrescu-Systematic-Error-Handling-in-C"&gt;video&lt;/a&gt;, &lt;a href="https://onedrive.live.com/?cid=F1B8FF18A2AEC5C5&amp;amp;id=F1B8FF18A2AEC5C5%211158&amp;amp;parId=root&amp;amp;o=OneUp"&gt;slides&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;In the first half of the presentation, he motivates and sketches the implementation of an &lt;code&gt;Expected&amp;lt;T&amp;gt;&lt;/code&gt; type which is equivalent to what is done in &lt;code&gt;ResultTypes&lt;/code&gt;. In addition to the advantages shown above, he also mentions dealing with errors across threads (multiple simultaneous exceptions being thrown), but I'm not sure how this applies to Julia.&lt;/p&gt;
 &lt;p&gt;Most interesting to me was slide 27 (&lt;em&gt;Icing&lt;/em&gt;) with this definition of &lt;code&gt;fromCode&lt;/code&gt;:&lt;/p&gt;
 
@@ -588,7 +588,7 @@ auto r = Expected&amp;lt;string&amp;gt;::fromCode([] {...});&lt;/code&gt;&lt;/pr
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Wrapping-Callees"&gt;Wrapping Callees&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#Wrapping-Callees"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We repeat our example function, but attempt to capture all exceptions (including those from &lt;code&gt;HTTP&lt;/code&gt;) and work with result values exclusively.&lt;/p&gt;
+&lt;h3 id="Wrapping-Callees"&gt;Wrapping Callees&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/#Wrapping-Callees"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We repeat our example function, but attempt to capture all exceptions (including those from &lt;code&gt;HTTP&lt;/code&gt;) and work with result values exclusively.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -723,7 +723,7 @@ Via: 1.1 vegur
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Wrapping-for-Callers"&gt;Wrapping for Callers&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#Wrapping-for-Callers"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let us assume that &lt;code&gt;https_get4&lt;/code&gt; was our library-internal utility function, but we would like to expose a version to our library users. They are expecting exceptions, so we throw them in case of error values:&lt;/p&gt;
+&lt;h3 id="Wrapping-for-Callers"&gt;Wrapping for Callers&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/#Wrapping-for-Callers"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let us assume that &lt;code&gt;https_get4&lt;/code&gt; was our library-internal utility function, but we would like to expose a version to our library users. They are expecting exceptions, so we throw them in case of error values:&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -915,7 +915,7 @@ Stacktrace:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Conclusion"&gt;Conclusion&lt;a class="anchor-link" href="https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/#Conclusion"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We have seen how we can bridge between the patterns of throwing exceptions and return error values, easily and in both directions. Maybe this will convince some developers to use &lt;code&gt;ResultValues&lt;/code&gt; in their own packages?&lt;/p&gt;
+&lt;h3 id="Conclusion"&gt;Conclusion&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/#Conclusion"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We have seen how we can bridge between the patterns of throwing exceptions and return error values, easily and in both directions. Maybe this will convince some developers to use &lt;code&gt;ResultValues&lt;/code&gt; in their own packages?&lt;/p&gt;
 &lt;p&gt;So far, I have only detected its use in &lt;a href="https://github.com/invenia/Dispatcher.jl"&gt;Dispatcher.jl&lt;/a&gt;. Please share your experiences with error handling in Julia!&lt;/p&gt;
 
 &lt;/div&gt;
@@ -923,4 +923,4 @@ Stacktrace:
 &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-</description><category>errors</category><category>exceptions</category><category>julialang</category><guid>https://leethargo.github.io/posts/managing-exceptions-with-resulttypes/</guid><pubDate>Tue, 29 Jan 2019 13:00:00 GMT</pubDate></item></channel></rss>
+</description><category>errors</category><category>exceptions</category><category>julialang</category><guid>https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/</guid><pubDate>Tue, 29 Jan 2019 13:00:00 GMT</pubDate></item></channel></rss>

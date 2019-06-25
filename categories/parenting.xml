@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frequently Answered Quantitatively (Posts about parenting)</title><link>https://leethargo.github.io/</link><description></description><atom:link href="https://leethargo.github.io/categories/parenting.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 29 Jan 2019 15:19:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Infant Formula, Cow's Milk and Nutrional Blending</title><link>https://leethargo.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Frequently Answered Quantitatively (Posts about parenting)</title><link>https://rschwarz.github.io/</link><description></description><atom:link href="https://rschwarz.github.io/categories/parenting.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 25 Jun 2019 09:12:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Infant Formula, Cow's Milk and Nutrional Blending</title><link>https://rschwarz.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
@@ -19,7 +19,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Data"&gt;Data&lt;a class="anchor-link" href="https://leethargo.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/#Data"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;As a reference for baby formula, we will use &lt;a href="https://www.hipp.de/milchnahrung/produkte/hipp-combiotikR/hipp-bio-combiotikR-anfangsmilch/hipp-pre-bio-combiotikR/"&gt;Hipp PRE BIO COMBIOTIK&lt;/a&gt;. They provide the following data on macronutrients:&lt;/p&gt;
+&lt;h2 id="Data"&gt;Data&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/#Data"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;As a reference for baby formula, we will use &lt;a href="https://www.hipp.de/milchnahrung/produkte/hipp-combiotikR/hipp-bio-combiotikR-anfangsmilch/hipp-pre-bio-combiotikR/"&gt;Hipp PRE BIO COMBIOTIK&lt;/a&gt;. They provide the following data on macronutrients:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;(Energy: 66 kcal / 100 ml)
 Fat: 3.5 g / 100 ml
@@ -49,7 +49,7 @@ Protein: 3.5 g / 100 ml&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Model"&gt;Model&lt;a class="anchor-link" href="https://leethargo.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/#Model"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We setup an optimization model inspired by the classical &lt;a href="https://en.wikipedia.org/wiki/Stigler_diet"&gt;diet problem&lt;/a&gt;, where we want to use four ingredients (water, whole milk, reduced-fat milk, lactose) to match the nutrional profile of baby formula.&lt;/p&gt;
+&lt;h2 id="Model"&gt;Model&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/#Model"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We setup an optimization model inspired by the classical &lt;a href="https://en.wikipedia.org/wiki/Stigler_diet"&gt;diet problem&lt;/a&gt;, where we want to use four ingredients (water, whole milk, reduced-fat milk, lactose) to match the nutrional profile of baby formula.&lt;/p&gt;
 &lt;p&gt;My thinking was that a blend of whole milk and reduced-fat milk should get the amount of fat right, while a dilution with water will get the protein level down to the target. Finally, we can add sugar in the form of lactose powder. This is widely available in drug stores, since it is also used as a mild laxative for infants.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -180,7 +180,7 @@ getvalue(slack_protein) = 1.8012820512820515
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Adding-Canola-Oil"&gt;Adding Canola Oil&lt;a class="anchor-link" href="https://leethargo.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/#Adding-Canola-Oil"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In order to reduce the protein content, we need another non-dairy fat source. Let us use rapeseed oil which is often recommended for preparation of (non-dairy) infant meals because of its neutral taste and rich content of essential fatty acids (omega-3).&lt;/p&gt;
+&lt;h3 id="Adding-Canola-Oil"&gt;Adding Canola Oil&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/#Adding-Canola-Oil"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In order to reduce the protein content, we need another non-dairy fat source. Let us use rapeseed oil which is often recommended for preparation of (non-dairy) infant meals because of its neutral taste and rich content of essential fatty acids (omega-3).&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -291,7 +291,7 @@ getvalue(oil) = 2.0661764705882355
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Diluting-the-Drink"&gt;Diluting the Drink&lt;a class="anchor-link" href="https://leethargo.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/#Diluting-the-Drink"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Once the infant has reached a certain age, it is not necessary to supply its body with food every 3-4 hours anymore. In particular, they do not really need to drink milk during the night and might only do so out of habit. In fact, it seems that at one year old, the infant does not need even need to get any liquid and will be fine anyways.&lt;/p&gt;
+&lt;h3 id="Diluting-the-Drink"&gt;Diluting the Drink&lt;a class="anchor-link" href="https://rschwarz.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/#Diluting-the-Drink"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Once the infant has reached a certain age, it is not necessary to supply its body with food every 3-4 hours anymore. In particular, they do not really need to drink milk during the night and might only do so out of habit. In fact, it seems that at one year old, the infant does not need even need to get any liquid and will be fine anyways.&lt;/p&gt;
 &lt;p&gt;At the same time, frequent food intake (in particular drinking) will increase the risk of tooth decay. So it makes sense to avoid night-time feeding.&lt;/p&gt;
 &lt;p&gt;In order to ensure some peaceful sleep nonetheless, I would like to scale down the energy content of our night-time drink over time. We will end up with just water, but go there in small steps. We will use our ingredients (with supplements) from above but change the targets: Rather then fixing the macronutrient levels, we will only ask for a specific energy content and put a limit on the protein level, since the infant's kidney might not be ready to handle larger amounts yet.&lt;/p&gt;
 
@@ -647,4 +647,4 @@ In the beginning, this amount of milk stays the same and the oil supplementation
 &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-</description><category>julialang</category><category>modeling</category><category>nutrition</category><category>optimization</category><category>parenting</category><guid>https://leethargo.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/</guid><pubDate>Thu, 04 Oct 2018 09:00:00 GMT</pubDate></item></channel></rss>
+</description><category>julialang</category><category>modeling</category><category>nutrition</category><category>optimization</category><category>parenting</category><guid>https://rschwarz.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/</guid><pubDate>Thu, 04 Oct 2018 09:00:00 GMT</pubDate></item></channel></rss>
