@@ -19,11 +19,15 @@
  </url>
  <url>
   <loc>https://rschwarz.github.io/archive.html</loc>
-  <lastmod>2019-06-25T09:12:00Z</lastmod>
+  <lastmod>2019-07-03T12:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://rschwarz.github.io/categories/</loc>
-  <lastmod>2019-06-25T09:12:00Z</lastmod>
+  <lastmod>2019-07-03T13:34:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://rschwarz.github.io/categories/control/</loc>
+  <lastmod>2019-07-03T13:34:00Z</lastmod>
  </url>
  <url>
   <loc>https://rschwarz.github.io/categories/errors/</loc>
@@ -104,5 +108,9 @@
  <url>
   <loc>https://rschwarz.github.io/posts/marginal-net-income-in-germany/</loc>
   <lastmod>2018-03-25T11:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://rschwarz.github.io/posts/sum-up-rounding-for-ramp-down-of-medication-intake/</loc>
+  <lastmod>2019-07-03T12:20:00Z</lastmod>
  </url>
 </urlset>
