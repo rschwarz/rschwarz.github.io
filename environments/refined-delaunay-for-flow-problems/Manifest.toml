@@ -52,9 +52,9 @@ version = "0.6.2"
 
 [[Cairo]]
 deps = ["BinaryProvider", "Colors", "Graphics", "Libdl"]
-git-tree-sha1 = "a922fa72801a7dd49a4164441f247af758bbc71e"
+git-tree-sha1 = "394dc757ccfd02e66056ca5b4fc551874d43ffb8"
 uuid = "159f3aea-2a34-519c-b102-8c37f9878175"
-version = "0.7.0"
+version = "0.8.0"
 
 [[CairoMakie]]
 deps = ["AbstractPlotting", "Cairo", "Colors", "FileIO", "GeometryTypes", "ImageCore", "ImageMagick", "LinearAlgebra", "MeshIO", "StaticArrays"]
@@ -123,9 +123,9 @@ version = "1.1.0"
 
 [[DataStructures]]
 deps = ["InteractiveUtils", "OrderedCollections"]
-git-tree-sha1 = "f94423c68f2e47db0d6f626a26d4872266e0ec3d"
+git-tree-sha1 = "2103e504f427e54ffa19af9ada225733a21f951f"
 uuid = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
-version = "0.17.2"
+version = "0.17.3"
 
 [[Dates]]
 deps = ["Printf"]
@@ -385,6 +385,12 @@ version = "0.5.2"
 deps = ["Unicode"]
 uuid = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 
+[[ProgressMeter]]
+deps = ["Distributed", "Printf"]
+git-tree-sha1 = "fab12b19f198dd148ca467ac4e4f12ecd0241819"
+uuid = "92933f4c-e287-5a05-a399-4b506db050ca"
+version = "1.1.0"
+
 [[REPL]]
 deps = ["InteractiveUtils", "Markdown", "Sockets"]
 uuid = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
@@ -466,9 +472,9 @@ version = "0.8.0"
 
 [[StaticArrays]]
 deps = ["LinearAlgebra", "Random", "Statistics"]
-git-tree-sha1 = "db23bbf50064c582b6f2b9b043c8e7e98ea8c0c6"
+git-tree-sha1 = "1085ffbf5fd48fdba64ef8e902ca429c4e1212d3"
 uuid = "90137ffa-7385-5640-81b9-e52037218182"
-version = "0.11.0"
+version = "0.11.1"
 
 [[Statistics]]
 deps = ["LinearAlgebra", "SparseArrays"]
@@ -500,6 +506,12 @@ deps = ["BinDeps", "Libdl", "Test"]
 git-tree-sha1 = "6c6951ef38556183da476eb3dbd5f8a8c30c4350"
 uuid = "56f361f5-126b-55db-87fb-1c71988fcde4"
 version = "0.2.0"
+
+[[TriangleMesh]]
+deps = ["BinDeps", "DelimitedFiles", "Libdl", "LinearAlgebra", "ProgressMeter", "Test"]
+git-tree-sha1 = "e7fb8d427ef566dbcd7cd7d41dbfb8ac6f0fde49"
+uuid = "e5719326-7e34-5a7d-b19a-3e86f2e9acf7"
+version = "1.0.7"
 
 [[URIParser]]
 deps = ["Test", "Unicode"]
