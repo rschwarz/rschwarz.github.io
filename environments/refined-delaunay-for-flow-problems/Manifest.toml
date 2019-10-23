@@ -501,12 +501,6 @@ git-tree-sha1 = "dfcdbbfb2d0370716c815cbd6f8a364efb6f42cf"
 uuid = "0796e94c-ce3b-5d07-9a54-7f471281c624"
 version = "0.5.6"
 
-[[Triangle]]
-deps = ["BinDeps", "Libdl", "Test"]
-git-tree-sha1 = "6c6951ef38556183da476eb3dbd5f8a8c30c4350"
-uuid = "56f361f5-126b-55db-87fb-1c71988fcde4"
-version = "0.2.0"
-
 [[TriangleMesh]]
 deps = ["BinDeps", "DelimitedFiles", "Libdl", "LinearAlgebra", "ProgressMeter", "Test"]
 git-tree-sha1 = "e7fb8d427ef566dbcd7cd7d41dbfb8ac6f0fde49"
