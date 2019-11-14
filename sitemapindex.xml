@@ -10,6 +10,10 @@
   <lastmod>2019-07-03T13:34:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://rschwarz.github.io/categories/delaunay.xml</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://rschwarz.github.io/categories/errors.xml</loc>
   <lastmod>2019-07-03T12:20:00Z</lastmod>
  </sitemap>
@@ -22,12 +26,20 @@
   <lastmod>2019-07-03T12:20:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://rschwarz.github.io/categories/flow.xml</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://rschwarz.github.io/categories/germany.xml</loc>
   <lastmod>2019-07-03T12:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/julialang.xml</loc>
-  <lastmod>2019-07-03T13:34:00Z</lastmod>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rschwarz.github.io/categories/mesh.xml</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/microtonal.xml</loc>
@@ -42,20 +54,36 @@
   <lastmod>2019-07-03T12:20:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://rschwarz.github.io/categories/network.xml</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://rschwarz.github.io/categories/nutrition.xml</loc>
   <lastmod>2019-07-03T12:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/optimization.xml</loc>
-  <lastmod>2019-07-03T13:34:00Z</lastmod>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/parenting.xml</loc>
   <lastmod>2019-07-03T12:20:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://rschwarz.github.io/categories/steiner.xml</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://rschwarz.github.io/categories/taxes.xml</loc>
   <lastmod>2019-07-03T12:20:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rschwarz.github.io/categories/tree.xml</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rschwarz.github.io/categories/triangulation.xml</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/work.xml</loc>
@@ -67,10 +95,10 @@
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/rss.xml</loc>
-  <lastmod>2019-07-03T13:34:00Z</lastmod>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/sitemap.xml</loc>
-  <lastmod>2019-07-03T13:34:00Z</lastmod>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
  </sitemap>
 </sitemapindex>

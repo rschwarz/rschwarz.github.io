@@ -19,15 +19,19 @@
  </url>
  <url>
   <loc>https://rschwarz.github.io/archive.html</loc>
-  <lastmod>2019-07-03T12:20:00Z</lastmod>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://rschwarz.github.io/categories/</loc>
-  <lastmod>2019-07-03T13:34:00Z</lastmod>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://rschwarz.github.io/categories/control/</loc>
   <lastmod>2019-07-03T13:34:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://rschwarz.github.io/categories/delaunay/</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://rschwarz.github.io/categories/errors/</loc>
@@ -42,12 +46,20 @@
   <lastmod>2018-03-25T11:24:00Z</lastmod>
  </url>
  <url>
+  <loc>https://rschwarz.github.io/categories/flow/</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://rschwarz.github.io/categories/germany/</loc>
   <lastmod>2018-03-25T11:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://rschwarz.github.io/categories/julialang/</loc>
   <lastmod>2018-03-25T11:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://rschwarz.github.io/categories/mesh/</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://rschwarz.github.io/categories/microtonal/</loc>
@@ -62,6 +74,10 @@
   <lastmod>2018-05-30T09:34:00Z</lastmod>
  </url>
  <url>
+  <loc>https://rschwarz.github.io/categories/network/</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://rschwarz.github.io/categories/nutrition/</loc>
   <lastmod>2018-10-04T09:14:00Z</lastmod>
  </url>
@@ -74,8 +90,20 @@
   <lastmod>2018-10-04T09:14:00Z</lastmod>
  </url>
  <url>
+  <loc>https://rschwarz.github.io/categories/steiner/</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://rschwarz.github.io/categories/taxes/</loc>
   <lastmod>2018-03-25T11:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://rschwarz.github.io/categories/tree/</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://rschwarz.github.io/categories/triangulation/</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://rschwarz.github.io/categories/work/</loc>
@@ -108,6 +136,10 @@
  <url>
   <loc>https://rschwarz.github.io/posts/marginal-net-income-in-germany/</loc>
   <lastmod>2018-03-25T11:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://rschwarz.github.io/posts/refined-delaunay-for-flow-problems/</loc>
+  <lastmod>2019-11-14T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://rschwarz.github.io/posts/sum-up-rounding-for-ramp-down-of-medication-intake/</loc>
