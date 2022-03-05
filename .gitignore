@@ -6,3 +6,4 @@ output/
 .doit.db.db
 .ipynb_checkpoints/
 /env/
+/environments/miplib_survival/
