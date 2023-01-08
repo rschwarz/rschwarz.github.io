@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frequently Answered Quantitatively (Posts about julialang)</title><link>https://rschwarz.github.io/</link><description></description><atom:link href="https://rschwarz.github.io/categories/julialang.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 10 Jul 2020 20:47:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Food Triangle Quantified</title><link>https://rschwarz.github.io/posts/the-food-triangle-quantified/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frequently Answered Quantitatively (Posts about julialang)</title><link>https://rschwarz.github.io/</link><description></description><atom:link href="https://rschwarz.github.io/categories/julialang.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 08 Jan 2023 16:23:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Food Triangle Quantified</title><link>https://rschwarz.github.io/posts/the-food-triangle-quantified/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;In a recent cookbook, the &lt;a href="https://healthspansolution.com/"&gt;Healthspan Solution&lt;/a&gt;, the authors propose a new way to categorize food: the food triangle.&lt;/p&gt;
@@ -823,7 +823,7 @@ Should peas actually be with the legumes?&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>julialang</category><category>nutrition</category><guid>https://rschwarz.github.io/posts/the-food-triangle-quantified/</guid><pubDate>Fri, 10 Jul 2020 18:00:00 GMT</pubDate></item><item><title>Refined Delaunay Triangulations for Flow Problems</title><link>https://rschwarz.github.io/posts/refined-delaunay-for-flow-problems/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;</description><category>julialang</category><category>nutrition</category><guid>https://rschwarz.github.io/posts/the-food-triangle-quantified/</guid><pubDate>Fri, 10 Jul 2020 18:00:00 GMT</pubDate></item><item><title>Refined Delaunay Triangulations for Flow Problems</title><link>https://rschwarz.github.io/posts/refined-delaunay-for-flow-problems/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;I am trying to solve a network design problem for gas pipeline networks (see &lt;a href="https://github.com/rschwarz/PipeLayout.jl"&gt;PipeLayout&lt;/a&gt;). In the original problem statement, only the coordinates of the source and sink nodes are given. Pipes can be connected in any way, also using Steiner nodes at any location.&lt;/p&gt;
@@ -4031,7 +4031,7 @@ This will gives a lower bound on the length (what we can hope to achieve), and m
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>delaunay</category><category>flow</category><category>julialang</category><category>mesh</category><category>network</category><category>optimization</category><category>Steiner</category><category>tree</category><category>triangulation</category><guid>https://rschwarz.github.io/posts/refined-delaunay-for-flow-problems/</guid><pubDate>Thu, 14 Nov 2019 12:00:00 GMT</pubDate></item><item><title>Sum Up Rounding for Ramp Down of Medication Intake</title><link>https://rschwarz.github.io/posts/sum-up-rounding-for-ramp-down-of-medication-intake/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;</description><category>delaunay</category><category>flow</category><category>julialang</category><category>mesh</category><category>network</category><category>optimization</category><category>Steiner</category><category>tree</category><category>triangulation</category><guid>https://rschwarz.github.io/posts/refined-delaunay-for-flow-problems/</guid><pubDate>Thu, 14 Nov 2019 12:00:00 GMT</pubDate></item><item><title>Sum Up Rounding for Ramp Down of Medication Intake</title><link>https://rschwarz.github.io/posts/sum-up-rounding-for-ramp-down-of-medication-intake/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;The paper &lt;a href="http://archiv.ub.uni-heidelberg.de/volltextserver/8384/"&gt;Solving Mixed-integer Control Problems by Sum Up Rounding With Guaranteed Integer Gap&lt;/a&gt; by Sager et al introduces a rounding strategy for control functions over time with respect to accumulated rounding error.&lt;/p&gt;
@@ -4427,7 +4427,7 @@ rounded = [0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 1.0, 1.0, -0.0, 1.0]
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>control</category><category>julialang</category><category>optimization</category><guid>https://rschwarz.github.io/posts/sum-up-rounding-for-ramp-down-of-medication-intake/</guid><pubDate>Wed, 03 Jul 2019 12:00:00 GMT</pubDate></item><item><title>Managing Exceptions with ResultTypes</title><link>https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+&lt;/div&gt;</description><category>control</category><category>julialang</category><category>optimization</category><guid>https://rschwarz.github.io/posts/sum-up-rounding-for-ramp-down-of-medication-intake/</guid><pubDate>Wed, 03 Jul 2019 12:00:00 GMT</pubDate></item><item><title>Managing Exceptions with ResultTypes</title><link>https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
@@ -5350,8 +5350,7 @@ Stacktrace:
 &lt;/div&gt;
 &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
-</description><category>errors</category><category>exceptions</category><category>julialang</category><guid>https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/</guid><pubDate>Tue, 29 Jan 2019 13:00:00 GMT</pubDate></item><item><title>Index Funds with Mixed-Integer-Programming</title><link>https://rschwarz.github.io/posts/index-funds-with-mixed-integer-programming/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+  &lt;/div&gt;</description><category>errors</category><category>exceptions</category><category>julialang</category><guid>https://rschwarz.github.io/posts/managing-exceptions-with-resulttypes/</guid><pubDate>Tue, 29 Jan 2019 13:00:00 GMT</pubDate></item><item><title>Index Funds with Mixed-Integer-Programming</title><link>https://rschwarz.github.io/posts/index-funds-with-mixed-integer-programming/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
@@ -6905,8 +6904,7 @@ For &lt;code&gt;Query&lt;/code&gt; itself, building the queries was relatively s
 &lt;/div&gt;
 &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
-</description><category>finance</category><category>julialang</category><category>modeling</category><category>optimization</category><guid>https://rschwarz.github.io/posts/index-funds-with-mixed-integer-programming/</guid><pubDate>Tue, 04 Dec 2018 17:00:00 GMT</pubDate></item><item><title>Infant Formula, Cow's Milk and Nutrional Blending</title><link>https://rschwarz.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+  &lt;/div&gt;</description><category>finance</category><category>julialang</category><category>modeling</category><category>optimization</category><guid>https://rschwarz.github.io/posts/index-funds-with-mixed-integer-programming/</guid><pubDate>Tue, 04 Dec 2018 17:00:00 GMT</pubDate></item><item><title>Infant Formula, Cow's Milk and Nutrional Blending</title><link>https://rschwarz.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
@@ -7553,8 +7551,7 @@ In the beginning, this amount of milk stays the same and the oil supplementation
 &lt;/div&gt;
 &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
-</description><category>julialang</category><category>modeling</category><category>nutrition</category><category>optimization</category><category>parenting</category><guid>https://rschwarz.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/</guid><pubDate>Thu, 04 Oct 2018 09:00:00 GMT</pubDate></item><item><title>Consonant Triads</title><link>https://rschwarz.github.io/posts/consonant-triads/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+  &lt;/div&gt;</description><category>julialang</category><category>modeling</category><category>nutrition</category><category>optimization</category><category>parenting</category><guid>https://rschwarz.github.io/posts/infant-formula-cows-milk-and-nutrional-blending/</guid><pubDate>Thu, 04 Oct 2018 09:00:00 GMT</pubDate></item><item><title>Consonant Triads</title><link>https://rschwarz.github.io/posts/consonant-triads/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
@@ -12119,8 +12116,7 @@ hZDv0WLW22sAAAAASUVORK5CYII=
 
 &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
-</description><category>julialang</category><category>microtonal</category><category>music</category><category>xenharmonic</category><guid>https://rschwarz.github.io/posts/consonant-triads/</guid><pubDate>Wed, 30 May 2018 09:00:00 GMT</pubDate></item><item><title>Marginal Net Income in Germany</title><link>https://rschwarz.github.io/posts/marginal-net-income-in-germany/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+  &lt;/div&gt;</description><category>julialang</category><category>microtonal</category><category>music</category><category>xenharmonic</category><guid>https://rschwarz.github.io/posts/consonant-triads/</guid><pubDate>Wed, 30 May 2018 09:00:00 GMT</pubDate></item><item><title>Marginal Net Income in Germany</title><link>https://rschwarz.github.io/posts/marginal-net-income-in-germany/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
@@ -14910,5 +14906,4 @@ With a high enough income, reducing the work load yields less and less increase 
 &lt;/div&gt;
 &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
-</description><category>finance</category><category>germany</category><category>julialang</category><category>taxes</category><category>work</category><guid>https://rschwarz.github.io/posts/marginal-net-income-in-germany/</guid><pubDate>Sat, 24 Mar 2018 21:10:46 GMT</pubDate></item></channel></rss>
+  &lt;/div&gt;</description><category>finance</category><category>germany</category><category>julialang</category><category>taxes</category><category>work</category><guid>https://rschwarz.github.io/posts/marginal-net-income-in-germany/</guid><pubDate>Sat, 24 Mar 2018 21:10:46 GMT</pubDate></item></channel></rss>

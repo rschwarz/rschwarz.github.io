@@ -7,98 +7,106 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://rschwarz.github.io/categories/control.xml</loc>
-  <lastmod>2019-07-03T13:34:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/delaunay.xml</loc>
-  <lastmod>2019-11-14T13:04:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/errors.xml</loc>
-  <lastmod>2019-07-03T12:20:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/exceptions.xml</loc>
-  <lastmod>2019-07-03T12:20:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/finance.xml</loc>
-  <lastmod>2019-07-03T12:20:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/flow.xml</loc>
-  <lastmod>2019-11-14T13:04:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/germany.xml</loc>
-  <lastmod>2019-07-03T12:20:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/julialang.xml</loc>
-  <lastmod>2020-07-10T20:44:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/mesh.xml</loc>
-  <lastmod>2019-11-14T13:04:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/microtonal.xml</loc>
-  <lastmod>2019-07-03T12:20:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/modeling.xml</loc>
-  <lastmod>2019-07-03T12:20:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/music.xml</loc>
-  <lastmod>2019-07-03T12:20:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/network.xml</loc>
-  <lastmod>2019-11-14T13:04:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/nutrition.xml</loc>
-  <lastmod>2020-07-10T20:44:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/optimization.xml</loc>
-  <lastmod>2019-11-14T13:04:00Z</lastmod>
+  <lastmod>2023-01-08T16:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/parenting.xml</loc>
-  <lastmod>2019-07-03T12:20:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rschwarz.github.io/categories/python.xml</loc>
+  <lastmod>2023-01-08T16:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/steiner.xml</loc>
-  <lastmod>2019-11-14T13:04:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://rschwarz.github.io/categories/survival.xml</loc>
+  <lastmod>2023-01-08T16:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/taxes.xml</loc>
-  <lastmod>2019-07-03T12:20:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/tree.xml</loc>
-  <lastmod>2019-11-14T13:04:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/triangulation.xml</loc>
-  <lastmod>2019-11-14T13:04:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/work.xml</loc>
-  <lastmod>2019-07-03T12:20:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/categories/xenharmonic.xml</loc>
-  <lastmod>2019-07-03T12:20:00Z</lastmod>
+  <lastmod>2023-01-08T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/rss.xml</loc>
-  <lastmod>2020-07-10T20:44:00Z</lastmod>
+  <lastmod>2023-01-08T16:25:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://rschwarz.github.io/sitemap.xml</loc>
-  <lastmod>2020-07-10T20:44:00Z</lastmod>
+  <lastmod>2023-01-08T16:25:00Z</lastmod>
  </sitemap>
 </sitemapindex>
