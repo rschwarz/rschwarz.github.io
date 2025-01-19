@@ -1,2 +1,3 @@
-# leethargo.github.io
+# rschwarz.github.io
 Personal website and blog
+
