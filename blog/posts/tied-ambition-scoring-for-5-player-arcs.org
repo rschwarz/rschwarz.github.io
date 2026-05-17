@@ -1,0 +1,14 @@
+#+BEGIN_COMMENT
+.. title: Tied Ambition Scoring for 5 player Arcs
+.. slug: tied-ambition-scoring-for-5-player-arcs
+.. date: 2026-05-17 21:28:22 UTC+02:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+
+#+END_COMMENT
+
+
+Write your post here.
