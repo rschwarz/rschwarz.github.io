@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frequently Answered Quantitatively (Posts about boardgames)</title><link>https://rschwarz.github.io/</link><description></description><atom:link href="https://rschwarz.github.io/categories/boardgames.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 17 May 2026 20:30:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tied Ambition Scoring for 5 player Arcs</title><link>https://rschwarz.github.io/posts/tied-ambition-scoring-for-5-player-arcs/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frequently Answered Quantitatively (Posts about boardgames)</title><link>https://rschwarz.github.io/</link><description></description><atom:link href="https://rschwarz.github.io/categories/boardgames.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 23 May 2026 10:02:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tied Ambition Scoring for 5 player Arcs</title><link>https://rschwarz.github.io/posts/tied-ambition-scoring-for-5-player-arcs/</link><dc:creator>Robert Schwarz</dc:creator><description>&lt;p&gt;
 This post is about the scoring of tied tied ambitions in the board game
 &lt;a href="https://boardgamegeek.com/boardgame/359871/arcs"&gt;Arcs: Conflict &amp;amp; Collapse in the Reach&lt;/a&gt; and its upcoming expansion
 &lt;a href="https://boardgamegeek.com/boardgameexpansion/468034/arcs-lost-vaults-and-fated-leaders-expansion"&gt;Arcs: Lost Vaults &amp;amp; Fated Leaders&lt;/a&gt;.
@@ -22,9 +22,9 @@ However, there are no official rules published (yet) about the assignment of
 places in the case of ties when scoring ambitions. In the following, we show an
 ambiguous situation and a possible generalisation of the existing rule.
 &lt;/p&gt;
-&lt;div id="outline-container-org5b7018c" class="outline-2"&gt;
-&lt;h2 id="org5b7018c"&gt;Base Game&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5b7018c"&gt;
+&lt;div id="outline-container-orga359d20" class="outline-2"&gt;
+&lt;h2 id="orga359d20"&gt;Base Game&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga359d20"&gt;
 &lt;p&gt;
 The &lt;a href="https://rules.buriedgiant.com/?product=arcs&amp;amp;locale=en-US&amp;amp;printing=p1#6."&gt;rules for scoring&lt;/a&gt; state:
 &lt;/p&gt;
@@ -58,9 +58,9 @@ Without loss of generality, we can assume that the players are sorted by the
 relevant score, i.e., A ≥ B ≥ C ≥ D.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org2753b45" class="outline-3"&gt;
-&lt;h3 id="org2753b45"&gt;Three players&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org2753b45"&gt;
+&lt;div id="outline-container-org2414bb5" class="outline-3"&gt;
+&lt;h3 id="org2414bb5"&gt;Three players&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2414bb5"&gt;
 &lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
 
 
@@ -120,9 +120,9 @@ relevant score, i.e., A ≥ B ≥ C ≥ D.
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org447eece" class="outline-3"&gt;
-&lt;h3 id="org447eece"&gt;Four players&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org447eece"&gt;
+&lt;div id="outline-container-orgd44bdd1" class="outline-3"&gt;
+&lt;h3 id="orgd44bdd1"&gt;Four players&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd44bdd1"&gt;
 &lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
 
 
@@ -226,9 +226,9 @@ relevant score, i.e., A ≥ B ≥ C ≥ D.
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org76bd13f" class="outline-2"&gt;
-&lt;h2 id="org76bd13f"&gt;Expansion: Lost Vaults &amp;amp; Fated Leaders&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org76bd13f"&gt;
+&lt;div id="outline-container-org46ee6ca" class="outline-2"&gt;
+&lt;h2 id="org46ee6ca"&gt;Expansion: Lost Vaults &amp;amp; Fated Leaders&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org46ee6ca"&gt;
 &lt;p&gt;
 The expansion is supposed to support a fifth player and also comes with ambition
 markers that show three values instead of the two before ("higher" and "lower").
@@ -253,23 +253,28 @@ only A would place first place, and other players get nothing.
 But neither of these cases would make good use of the added third value on the
 ambition marker, so let's try to adapt.
 &lt;/p&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-orgc02baee" class="outline-3"&gt;
-&lt;h3 id="orgc02baee"&gt;Rule Generalisation&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc02baee"&gt;
-&lt;p&gt;
-The rules as written can also be interpreted as follows
-&lt;/p&gt;
 
+&lt;p&gt;
+&lt;b&gt;UPDATE&lt;/b&gt;: After a discussion on the &lt;a href="https://discord.com/channels/1459242411325919317/1505671254202384415"&gt;Arc rules channel on Discord&lt;/a&gt;, I was
+convinced by yet another generalisation which I have added below as the 1st and
+preferable interpretation. My original thinking is kept as version 2.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org0993541" class="outline-3"&gt;
+&lt;h3 id="org0993541"&gt;Rule Generalisation #1 (Preferred)&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org0993541"&gt;
 &lt;blockquote&gt;
 &lt;p&gt;
 When players tie for a place, they all get points for the next lower place.
-Players scoring lower also drop to the next place.
+Players scoring lower also drop as many places as they have players scoring
+above them.
 &lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;
-This rule can be applied recursively, starting from the first place.
+This makes sure that in a situation like A = B = C &amp;gt; D, D would not get 3rd
+place points, which would be surprising, given that three players score above
+them.
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -290,9 +295,233 @@ I've enumerated all combinations in the table below.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org3086ee3" class="outline-3"&gt;
-&lt;h3 id="org3086ee3"&gt;Five Players&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org3086ee3"&gt;
+&lt;div id="outline-container-org897673c" class="outline-3"&gt;
+&lt;h3 id="org897673c"&gt;Five Players&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org897673c"&gt;
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col class="org-left"&gt;
+
+&lt;col class="org-left"&gt;
+
+&lt;col class="org-right"&gt;
+
+&lt;col class="org-right"&gt;
+
+&lt;col class="org-right"&gt;
+
+&lt;col class="org-left"&gt;
+
+&lt;col class="org-left"&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col" class="org-left"&gt;Scores&lt;/th&gt;
+&lt;th scope="col" class="org-left"&gt;Place:&lt;/th&gt;
+&lt;th scope="col" class="org-right"&gt;A&lt;/th&gt;
+&lt;th scope="col" class="org-right"&gt;B&lt;/th&gt;
+&lt;th scope="col" class="org-right"&gt;C&lt;/th&gt;
+&lt;th scope="col" class="org-left"&gt;D&lt;/th&gt;
+&lt;th scope="col" class="org-left"&gt;E&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A &amp;gt; B &amp;gt; C &amp;gt; D &amp;gt; E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;1&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;3&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A &amp;gt; B &amp;gt; C &amp;gt; D = E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;1&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;3&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A &amp;gt; B &amp;gt; C = D &amp;gt; E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;1&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A &amp;gt; B &amp;gt; C = D = E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;1&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A &amp;gt; B = C &amp;gt; D &amp;gt; E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;1&lt;/td&gt;
+&lt;td class="org-right"&gt;3&lt;/td&gt;
+&lt;td class="org-right"&gt;3&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A &amp;gt; B = C &amp;gt; D = E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;1&lt;/td&gt;
+&lt;td class="org-right"&gt;3&lt;/td&gt;
+&lt;td class="org-right"&gt;3&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A &amp;gt; B = C = D &amp;gt; E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;1&lt;/td&gt;
+&lt;td class="org-right"&gt;3&lt;/td&gt;
+&lt;td class="org-right"&gt;3&lt;/td&gt;
+&lt;td class="org-left"&gt;3&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A &amp;gt; B = C = D = E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;1&lt;/td&gt;
+&lt;td class="org-right"&gt;3&lt;/td&gt;
+&lt;td class="org-right"&gt;3&lt;/td&gt;
+&lt;td class="org-left"&gt;3&lt;/td&gt;
+&lt;td class="org-left"&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A = B &amp;gt; C &amp;gt; D &amp;gt; E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;3&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A = B &amp;gt; C &amp;gt; D = E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;3&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A = B &amp;gt; C = D &amp;gt; E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A = B &amp;gt; C = D = E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A = B = C &amp;gt; D &amp;gt; E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A = B = C &amp;gt; D = E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A = B = C = D &amp;gt; E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-left"&gt;2&lt;/td&gt;
+&lt;td class="org-left"&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;A = B = C = D = E&lt;/td&gt;
+&lt;td class="org-left"&gt; &lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-right"&gt;2&lt;/td&gt;
+&lt;td class="org-left"&gt;2&lt;/td&gt;
+&lt;td class="org-left"&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org22b8cfe" class="outline-3"&gt;
+&lt;h3 id="org22b8cfe"&gt;Rule Generalisation #2 (Alternative)&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org22b8cfe"&gt;
+&lt;p&gt;
+The rules as written could also be interpreted as follows
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+When players tie for a place, they all get points for the next lower place.
+Players scoring lower also drop to the next place.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+This rule can be applied recursively, starting from the first place.
+&lt;/p&gt;
+
+&lt;p&gt;
+There are only minor differences compared to the first version, namely when
+there the first three players are tied.
+&lt;/p&gt;
+
+&lt;p&gt;
+I've enumerated all combinations in the table below.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgd2522d8" class="outline-3"&gt;
+&lt;h3 id="orgd2522d8"&gt;Five Players&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd2522d8"&gt;
 &lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
 
 

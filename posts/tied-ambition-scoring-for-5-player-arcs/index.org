@@ -93,16 +93,21 @@ only A would place first place, and other players get nothing.
 But neither of these cases would make good use of the added third value on the
 ambition marker, so let's try to adapt.
 
-** Rule Generalisation
+*UPDATE*: After a discussion on the [[https://discord.com/channels/1459242411325919317/1505671254202384415][Arc rules channel on Discord]], I was
+convinced by yet another generalisation which I have added below as the 1st and
+preferable interpretation. My original thinking is kept as version 2.
 
-The rules as written can also be interpreted as follows
+** Rule Generalisation #1 (Preferred)
 
 #+begin_quote
 When players tie for a place, they all get points for the next lower place.
-Players scoring lower also drop to the next place.
+Players scoring lower also drop as many places as they have players scoring
+above them.
 #+end_quote
 
-This rule can be applied recursively, starting from the first place.
+This makes sure that in a situation like A = B = C > D, D would not get 3rd
+place points, which would be surprising, given that three players score above
+them.
 
 In our first example above (A = B > C > D > E), we would find that A & B tie for
 first place, so they get points for second place. C would have placed second
@@ -112,6 +117,44 @@ but the ambition markers don't provide points for these, so they get nothing.
 In the second example (A > B = C > D > E), A scores first place (as before). B
 and C are tied for the second place, so they now get points for the third place.
 Again, D and E get nothing.
+
+I've enumerated all combinations in the table below.
+
+** Five Players
+
+| Scores            | Place: | A | B | C | D | E |
+|-------------------+--------+---+---+---+---+---|
+| A > B > C > D > E |        | 1 | 2 | 3 | - | - |
+| A > B > C > D = E |        | 1 | 2 | 3 | - | - |
+| A > B > C = D > E |        | 1 | 2 | - | - | - |
+| A > B > C = D = E |        | 1 | 2 | - | - | - |
+| A > B = C > D > E |        | 1 | 3 | 3 | - | - |
+| A > B = C > D = E |        | 1 | 3 | 3 | - | - |
+| A > B = C = D > E |        | 1 | 3 | 3 | 3 | - |
+| A > B = C = D = E |        | 1 | 3 | 3 | 3 | 3 |
+| A = B > C > D > E |        | 2 | 2 | 3 | - | - |
+| A = B > C > D = E |        | 2 | 2 | 3 | - | - |
+| A = B > C = D > E |        | 2 | 2 | - | - | - |
+| A = B > C = D = E |        | 2 | 2 | - | - | - |
+| A = B = C > D > E |        | 2 | 2 | 2 | - | - |
+| A = B = C > D = E |        | 2 | 2 | 2 | - | - |
+| A = B = C = D > E |        | 2 | 2 | 2 | 2 | - |
+| A = B = C = D = E |        | 2 | 2 | 2 | 2 | 2 |
+
+
+** Rule Generalisation #2 (Alternative)
+
+The rules as written could also be interpreted as follows
+
+#+begin_quote
+When players tie for a place, they all get points for the next lower place.
+Players scoring lower also drop to the next place.
+#+end_quote
+
+This rule can be applied recursively, starting from the first place.
+
+There are only minor differences compared to the first version, namely when
+there the first three players are tied.
 
 I've enumerated all combinations in the table below.
 

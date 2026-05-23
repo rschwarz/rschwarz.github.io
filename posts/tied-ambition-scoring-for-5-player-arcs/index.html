@@ -122,9 +122,9 @@ However, there are no official rules published (yet) about the assignment of
 places in the case of ties when scoring ambitions. In the following, we show an
 ambiguous situation and a possible generalisation of the existing rule.
 </p>
-<div id="outline-container-org5b7018c" class="outline-2">
-<h2 id="org5b7018c">Base Game</h2>
-<div class="outline-text-2" id="text-org5b7018c">
+<div id="outline-container-orga359d20" class="outline-2">
+<h2 id="orga359d20">Base Game</h2>
+<div class="outline-text-2" id="text-orga359d20">
 <p>
 The <a href="https://rules.buriedgiant.com/?product=arcs&amp;locale=en-US&amp;printing=p1#6.">rules for scoring</a> state:
 </p>
@@ -158,9 +158,9 @@ Without loss of generality, we can assume that the players are sorted by the
 relevant score, i.e., A ≥ B ≥ C ≥ D.
 </p>
 </div>
-<div id="outline-container-org2753b45" class="outline-3">
-<h3 id="org2753b45">Three players</h3>
-<div class="outline-text-3" id="text-org2753b45">
+<div id="outline-container-org2414bb5" class="outline-3">
+<h3 id="org2414bb5">Three players</h3>
+<div class="outline-text-3" id="text-org2414bb5">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup>
 <col class="org-left">
@@ -209,9 +209,9 @@ relevant score, i.e., A ≥ B ≥ C ≥ D.
 </table>
 </div>
 </div>
-<div id="outline-container-org447eece" class="outline-3">
-<h3 id="org447eece">Four players</h3>
-<div class="outline-text-3" id="text-org447eece">
+<div id="outline-container-orgd44bdd1" class="outline-3">
+<h3 id="orgd44bdd1">Four players</h3>
+<div class="outline-text-3" id="text-orgd44bdd1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup>
 <col class="org-left">
@@ -299,9 +299,9 @@ relevant score, i.e., A ≥ B ≥ C ≥ D.
 </div>
 </div>
 </div>
-<div id="outline-container-org76bd13f" class="outline-2">
-<h2 id="org76bd13f">Expansion: Lost Vaults &amp; Fated Leaders</h2>
-<div class="outline-text-2" id="text-org76bd13f">
+<div id="outline-container-org46ee6ca" class="outline-2">
+<h2 id="org46ee6ca">Expansion: Lost Vaults &amp; Fated Leaders</h2>
+<div class="outline-text-2" id="text-org46ee6ca">
 <p>
 The expansion is supposed to support a fifth player and also comes with ambition
 markers that show three values instead of the two before ("higher" and "lower").
@@ -326,23 +326,28 @@ only A would place first place, and other players get nothing.
 But neither of these cases would make good use of the added third value on the
 ambition marker, so let's try to adapt.
 </p>
-</div>
-<div id="outline-container-orgc02baee" class="outline-3">
-<h3 id="orgc02baee">Rule Generalisation</h3>
-<div class="outline-text-3" id="text-orgc02baee">
-<p>
-The rules as written can also be interpreted as follows
-</p>
 
+<p>
+<b>UPDATE</b>: After a discussion on the <a href="https://discord.com/channels/1459242411325919317/1505671254202384415">Arc rules channel on Discord</a>, I was
+convinced by yet another generalisation which I have added below as the 1st and
+preferable interpretation. My original thinking is kept as version 2.
+</p>
+</div>
+<div id="outline-container-org0993541" class="outline-3">
+<h3 id="org0993541">Rule Generalisation #1 (Preferred)</h3>
+<div class="outline-text-3" id="text-org0993541">
 <blockquote>
 <p>
 When players tie for a place, they all get points for the next lower place.
-Players scoring lower also drop to the next place.
+Players scoring lower also drop as many places as they have players scoring
+above them.
 </p>
 </blockquote>
 
 <p>
-This rule can be applied recursively, starting from the first place.
+This makes sure that in a situation like A = B = C &gt; D, D would not get 3rd
+place points, which would be surprising, given that three players score above
+them.
 </p>
 
 <p>
@@ -363,9 +368,208 @@ I've enumerated all combinations in the table below.
 </p>
 </div>
 </div>
-<div id="outline-container-org3086ee3" class="outline-3">
-<h3 id="org3086ee3">Five Players</h3>
-<div class="outline-text-3" id="text-org3086ee3">
+<div id="outline-container-org897673c" class="outline-3">
+<h3 id="org897673c">Five Players</h3>
+<div class="outline-text-3" id="text-org897673c">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup>
+<col class="org-left">
+<col class="org-left">
+<col class="org-right">
+<col class="org-right">
+<col class="org-right">
+<col class="org-left">
+<col class="org-left">
+</colgroup>
+<thead><tr>
+<th scope="col" class="org-left">Scores</th>
+<th scope="col" class="org-left">Place:</th>
+<th scope="col" class="org-right">A</th>
+<th scope="col" class="org-right">B</th>
+<th scope="col" class="org-right">C</th>
+<th scope="col" class="org-left">D</th>
+<th scope="col" class="org-left">E</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="org-left">A &gt; B &gt; C &gt; D &gt; E</td>
+<td class="org-left"> </td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">3</td>
+<td class="org-left">-</td>
+<td class="org-left">-</td>
+</tr>
+<tr>
+<td class="org-left">A &gt; B &gt; C &gt; D = E</td>
+<td class="org-left"> </td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">3</td>
+<td class="org-left">-</td>
+<td class="org-left">-</td>
+</tr>
+<tr>
+<td class="org-left">A &gt; B &gt; C = D &gt; E</td>
+<td class="org-left"> </td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">-</td>
+<td class="org-left">-</td>
+<td class="org-left">-</td>
+</tr>
+<tr>
+<td class="org-left">A &gt; B &gt; C = D = E</td>
+<td class="org-left"> </td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">-</td>
+<td class="org-left">-</td>
+<td class="org-left">-</td>
+</tr>
+<tr>
+<td class="org-left">A &gt; B = C &gt; D &gt; E</td>
+<td class="org-left"> </td>
+<td class="org-right">1</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+<td class="org-left">-</td>
+<td class="org-left">-</td>
+</tr>
+<tr>
+<td class="org-left">A &gt; B = C &gt; D = E</td>
+<td class="org-left"> </td>
+<td class="org-right">1</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+<td class="org-left">-</td>
+<td class="org-left">-</td>
+</tr>
+<tr>
+<td class="org-left">A &gt; B = C = D &gt; E</td>
+<td class="org-left"> </td>
+<td class="org-right">1</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+<td class="org-left">3</td>
+<td class="org-left">-</td>
+</tr>
+<tr>
+<td class="org-left">A &gt; B = C = D = E</td>
+<td class="org-left"> </td>
+<td class="org-right">1</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+<td class="org-left">3</td>
+<td class="org-left">3</td>
+</tr>
+<tr>
+<td class="org-left">A = B &gt; C &gt; D &gt; E</td>
+<td class="org-left"> </td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">3</td>
+<td class="org-left">-</td>
+<td class="org-left">-</td>
+</tr>
+<tr>
+<td class="org-left">A = B &gt; C &gt; D = E</td>
+<td class="org-left"> </td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">3</td>
+<td class="org-left">-</td>
+<td class="org-left">-</td>
+</tr>
+<tr>
+<td class="org-left">A = B &gt; C = D &gt; E</td>
+<td class="org-left"> </td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">-</td>
+<td class="org-left">-</td>
+<td class="org-left">-</td>
+</tr>
+<tr>
+<td class="org-left">A = B &gt; C = D = E</td>
+<td class="org-left"> </td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">-</td>
+<td class="org-left">-</td>
+<td class="org-left">-</td>
+</tr>
+<tr>
+<td class="org-left">A = B = C &gt; D &gt; E</td>
+<td class="org-left"> </td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-left">-</td>
+<td class="org-left">-</td>
+</tr>
+<tr>
+<td class="org-left">A = B = C &gt; D = E</td>
+<td class="org-left"> </td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-left">-</td>
+<td class="org-left">-</td>
+</tr>
+<tr>
+<td class="org-left">A = B = C = D &gt; E</td>
+<td class="org-left"> </td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-left">2</td>
+<td class="org-left">-</td>
+</tr>
+<tr>
+<td class="org-left">A = B = C = D = E</td>
+<td class="org-left"> </td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-left">2</td>
+<td class="org-left">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org22b8cfe" class="outline-3">
+<h3 id="org22b8cfe">Rule Generalisation #2 (Alternative)</h3>
+<div class="outline-text-3" id="text-org22b8cfe">
+<p>
+The rules as written could also be interpreted as follows
+</p>
+
+<blockquote>
+<p>
+When players tie for a place, they all get points for the next lower place.
+Players scoring lower also drop to the next place.
+</p>
+</blockquote>
+
+<p>
+This rule can be applied recursively, starting from the first place.
+</p>
+
+<p>
+There are only minor differences compared to the first version, namely when
+there the first three players are tied.
+</p>
+
+<p>
+I've enumerated all combinations in the table below.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd2522d8" class="outline-3">
+<h3 id="orgd2522d8">Five Players</h3>
+<div class="outline-text-3" id="text-orgd2522d8">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup>
 <col class="org-left">
